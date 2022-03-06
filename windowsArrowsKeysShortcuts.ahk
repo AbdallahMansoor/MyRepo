@@ -33,6 +33,8 @@ LAlt & j::
 if GetKeyState("Shift", "D")
     if GetKeyState("Ctrl", "D")
         Send +^{Left}
+        else if GetKeyState("s", "D")
+         Send +^{Left}
     else
         Send +{Left}
 else if GetKeyState("Ctrl", "D")
@@ -45,6 +47,8 @@ LAlt & l::
 if GetKeyState("Shift", "D")
     if GetKeyState("Ctrl", "D")
         Send +^{Right}
+        else if GetKeyState("s", "D")
+         Send +^{Right}
     else
         Send +{Right}
 else if GetKeyState("Ctrl", "D")
@@ -83,5 +87,4 @@ Esc::1
 +Esc::!
 SC056::Shift
 return
-
 
