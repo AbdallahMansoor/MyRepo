@@ -1,7 +1,11 @@
-﻿#NoTrayIcon
 
+/* useful link 
+https://www.autohotkey.com/board/topic/21105-crazy-scripting-scriptlet-to-find-scancode-of-a-key/
+*/
 
-Alt & i::
+#NoTrayIcon
+
+LAlt & i::
 if GetKeyState("Shift", "D")
     if GetKeyState("Ctrl", "D")
         Send +^{Up}
@@ -13,7 +17,7 @@ else
     Send {Up}
 return
 
-Alt & k::
+LAlt & k::
 if GetKeyState("Shift", "D")
     if GetKeyState("Ctrl", "D")
         Send +^{Down}
@@ -25,7 +29,7 @@ else
     Send {Down}
 return
 
-Alt & j::
+LAlt & j::
 if GetKeyState("Shift", "D")
     if GetKeyState("Ctrl", "D")
         Send +^{Left}
@@ -37,7 +41,7 @@ else
     Send {Left}
 return
 
-Alt & l::
+LAlt & l::
 if GetKeyState("Shift", "D")
     if GetKeyState("Ctrl", "D")
         Send +^{Right}
@@ -49,7 +53,7 @@ else
     Send {Right}
 return
 
-Alt & h::
+LAlt & h::
 if GetKeyState("Shift", "D")
         Send +{Home}
 else if GetKeyState("Ctrl", "D")
@@ -58,7 +62,7 @@ else
     Send {Home}
 return
 
-Alt & `;::
+LAlt & `;::
 if GetKeyState("Shift", "D")
         Send +{End}
 else if GetKeyState("Ctrl", "D")
@@ -67,8 +71,17 @@ else
     Send {End}
 return
 
-Alt & u:: send, {PgUp}
-Alt & p:: send, {PgDn}
+LAlt & u:: send, {PgUp}
+LAlt & p:: send, {PgDn}
 
 
+CapsLock::Ctrl
+>^CapsLock::CapsLock
+
+1::Esc
+Esc::1
++Esc::!
+SC056::Shift
 return
+
+
