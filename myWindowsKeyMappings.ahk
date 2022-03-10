@@ -208,7 +208,7 @@ SC056::Shift        ;the Scan Code for the left '\'
 /::Shift
 LShift::Ctrl
 LAlt & .::send, /
-#k::#Down
-#i::#Up 
+#k::WinMinimize, A
+#i::WinMaximize, A 
 LAlt & BackSpace:: Send ^{BackSpace}
 LAlt & Enter:: Send ^{Enter}
