@@ -212,3 +212,8 @@ LAlt & .::send, /
 #i::WinMaximize, A 
 LAlt & BackSpace:: Send ^{BackSpace}
 LAlt & Enter:: Send ^{Enter}
+LAlt & z:: Send ^{z}
+LAlt & x:: Send ^{x}
+LAlt & c:: Send ^{c}
+LAlt & v:: Send ^{v}
+LAlt & y:: Send ^{y}
