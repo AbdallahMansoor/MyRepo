@@ -4,7 +4,7 @@ including a script to know the scanCode/unicode for each key on the keyboard
 https://www.reddit.com/r/AutoHotkey/comments/4f4j9k/read_this_before_posting/
 */
 
-/* listen to a key if pressed two consecutive/twice in a certain interval
+/* listen to a key if pressed two consecutive/twice in a certain interval and make it do a different function
 Down::
 If (A_PriorHotKey = "Down" AND A_TimeSincePriorHotkey < 400)
 {
@@ -25,9 +25,9 @@ LAlt & Space:: return
 LAlt & i::
 if GetKeyState("d","P")
     if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-	Send, +{Up}+{Up}+{Up}
+	Send, +{Up 3}
     else
-    Send, {Up}{Up}{Up}
+    Send, {Up 3}
 
 if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
     if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
@@ -54,9 +54,9 @@ return
 LAlt & k::
 if GetKeyState("d","P")
     if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-	Send, +{Down}+{Down}+{Down}
+	Send, +{Down 3}
     else
-    Send, {Down}{Down}{Down}
+    Send, {Down 3}
 
 if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
     if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
