@@ -23,58 +23,58 @@ LAlt & Space:: return
 
 
 LAlt & i::
-if GetKeyState("Space","P")
+if GetKeyState("d","P")
     if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-	Send, +{Up}+{Up}+{Up}+{Up}
+	Send, +{Up}+{Up}+{Up}
     else
-    Send, {Up}{Up}{Up}{Up}
+    Send, {Up}{Up}{Up}
 
 if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+    if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
         Send +^{Up}
     else
         Send +{Up}
-else if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
         Send ^{Up}
 else
     Send {Up}
 
 if GetKeyState("CapsLock","P")
 if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+    if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
         Send ^!+{Up}
     else
         Send +!{Up}
-else if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
         Send ^!{Up}
 else
     Send !{Up}
 return
 
 LAlt & k::
-if GetKeyState("Space","P")
+if GetKeyState("d","P")
     if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-	Send, +{Down}+{Down}+{Down}+{Down}
+	Send, +{Down}+{Down}+{Down}
     else
-    Send, {Down}{Down}{Down}{Down}
+    Send, {Down}{Down}{Down}
 
 if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+    if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
         Send +^{Down}
     else
         Send +{Down}
-else if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
         Send ^{Down}
 else
     Send {Down}
 
 if GetKeyState("CapsLock","P")
 if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+    if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
         Send ^!+{Down}
     else
         Send +!{Down}
-else if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
         Send ^!{Down}
 else
     Send !{Down}
