@@ -14,38 +14,64 @@ Send {Down}
 return
 */
 
+/* activate/deactivate certain hotkeys for certain apps
+GroupAdd myGroup, ahk_exe Code.exe 
+GroupAdd myGroup, ahk_exe studio64.exe
+GroupAdd myGroup, ahk_exe idea64.exe
+GroupAdd myGroup, ahk_exe webstorm64.exe 
+;this block of code should be at the top of the file ( the so called auto-execute section) and followed by its #IfWin statement 
+     
+#IfWinNotActive ahk_group myGroup
+LAlt & q::Send ^{Tab}
+#IfWinNotActive
+*/
+
 
 #NoTrayIcon
 
+#UseHook
+SendMode Input
+#MaxThreads 255
+#MaxThreadsPerHotkey 255 
+
+#IfWinActive, ahk_class MultitaskingViewFrame ; Windows 10 alt-tab switcher 'https://www.autohotkey.com/docs/Hotkeys.htm#AltTabRemarks'
+i::Up
+k::Down
+j::Left
+l::Right
+backspace::delete
+#If
+
+#IfWinNotActive, ahk_class MultitaskingViewFrame
+
 LAlt & s:: return
 LAlt & d:: return
-LAlt & Space:: return
+LAlt & Space:: Send {Space}
 
 
 LAlt & i::
 if GetKeyState("d","P")
-    if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-	Send, +{Up 3}
+    if GetKeyState("s", "P") || GetKeyState("Shift") 
+	Send, +{Up 4}
     else
-    Send, {Up 3}
-
-if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+    Send, {Up 4}
+else if GetKeyState("s", "P") || GetKeyState("Shift") 
+    if GetKeyState("Space", "P") || GetKeyState("Ctrl")
         Send +^{Up}
     else
         Send +{Up}
-else if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("Space", "P") || GetKeyState("Ctrl")
         Send ^{Up}
 else
     Send {Up}
 
 if GetKeyState("CapsLock","P")
-if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+if GetKeyState("s", "P") || GetKeyState("Shift") 
+    if GetKeyState("Space", "P") || GetKeyState("Ctrl")
         Send ^!+{Up}
     else
         Send +!{Up}
-else if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("Space", "P") || GetKeyState("Ctrl")
         Send ^!{Up}
 else
     Send !{Up}
@@ -53,157 +79,200 @@ return
 
 LAlt & k::
 if GetKeyState("d","P")
-    if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-	Send, +{Down 3}
+    if GetKeyState("s", "P") || GetKeyState("Shift") 
+	Send, +{Down 4}
     else
-    Send, {Down 3}
-
-if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+    Send, {Down 4}
+else if GetKeyState("s", "P") || GetKeyState("Shift") 
+    if GetKeyState("Space", "P") || GetKeyState("Ctrl")
         Send +^{Down}
     else
         Send +{Down}
-else if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("Space", "P") || GetKeyState("Ctrl")
         Send ^{Down}
 else
     Send {Down}
 
 if GetKeyState("CapsLock","P")
-if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+if GetKeyState("s", "P") || GetKeyState("Shift") 
+    if GetKeyState("Space", "P") || GetKeyState("Ctrl")
         Send ^!+{Down}
     else
         Send +!{Down}
-else if GetKeyState("Space", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("Space", "P") || GetKeyState("Ctrl")
         Send ^!{Down}
 else
     Send !{Down}
 return
 
 LAlt & j::
-if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+if GetKeyState("s", "P") || GetKeyState("Shift") 
+    if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send +^{Left}
     else
         Send +{Left}
-else if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send ^{Left}
 else
     Send {Left}
 
 if GetKeyState("CapsLock","P")
-if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+if GetKeyState("s", "P") || GetKeyState("Shift") 
+    if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send ^!+{Left}
     else
         Send +!{Left}
-else if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send ^!{Left}
 else
     Send !{Left}
 return
 
 LAlt & l::
-if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+if GetKeyState("s", "P") || GetKeyState("Shift") 
+    if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send +^{Right}
     else
         Send +{Right}
-else if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send ^{Right}
 else
     Send {Right}
 
 if GetKeyState("CapsLock","P")
-if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+if GetKeyState("s", "P") || GetKeyState("Shift") 
+    if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send ^!+{Right}
     else
         Send +!{Right}
-else if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send ^!{Right}
 else
     Send !{Right}
 return
 
 LAlt & h::
-if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+if GetKeyState("s", "P") || GetKeyState("Shift") 
+    if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send +^{Home}
     else
         Send +{Home}
-else if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send ^{Home}
 else
     Send {Home}
 
 if GetKeyState("CapsLock","P")
-if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+if GetKeyState("s", "P") || GetKeyState("Shift") 
+    if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send ^!+{Home}
     else
         Send +!{Home}
-else if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send ^!{Home}
 else
     Send !{Home}
 return
 
 LAlt & `;::
-if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+if GetKeyState("s", "P") || GetKeyState("Shift") 
+    if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send +^{End}
     else
         Send +{End}
-else if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send ^{End}
 else
     Send {End}
 
 if GetKeyState("CapsLock","P")
-if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+if GetKeyState("s", "P") || GetKeyState("Shift") 
+    if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send ^!+{End}
     else
         Send +!{End}
-else if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send ^!{End}
 else
     Send !{End}
 return
 
 LAlt & u::
-if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+if GetKeyState("s", "P") || GetKeyState("Shift") 
+    if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send +^{PgUp}
     else
         Send +{PgUp}
-else if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send ^{PgUp}
 else
     Send {PgUp}
 return
 
 LAlt & p::
-if GetKeyState("s", "P") || GetKeyState("RShift", "P") || GetKeyState("SC056", "P") || GetKeyState("/", "P")
-    if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+if GetKeyState("s", "P") || GetKeyState("Shift") 
+    if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send +^{PgDn}
     else
         Send +{PgDn}
-else if GetKeyState("d", "P") || GetKeyState("Ctrl", "P") || GetKeyState("LShift", "P")
+else if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send ^{PgDn}
 else
     Send {PgDn}
 return
 
 
-CapsLock::Alt
 >!CapsLock::CapsLock
 
-1::Esc
-*^1:: Send {Esc}
-Esc::1
-+Esc::!
+*CapsLock::
+cDown := A_TickCount ; A_TickCount is the time since the script started
+if GetKeyState("shift")
+    if GetKeyState("Ctrl") 
+        Send {Blind}^+{Alt Down}
+    else
+        Send {Blind}+{Alt Down}
+else if GetKeyState("Ctrl") 
+        Send {Blind}^{Alt Down}
+else
+    Send {Blind}{Alt Down}   
+Return
+
+*CapsLock up::
+    If ((A_TickCount-cDown)<400) { ; so this is the elapsed time 
+     if GetKeyState("shift")
+        if GetKeyState("Ctrl") 
+       Send {Blind}{Alt Up}^+{Esc}
+    else
+         Send {Blind}{Alt Up}+{Esc}
+else if GetKeyState("Ctrl") 
+         Send {Blind}{Alt Up}^{Esc}
+    else
+     Send {Blind}{Alt Up}{Esc}
+    } 
+    else
+        Send {Blind}{Alt Up}
+Return
+
+
+LAlt & q::
+    if GetKeyState("Shift")
+        Send ^+{Tab}
+    else
+        Send {LCtrl down}{Tab}
+        KeyWait LAlt
+        Send {LCtrl up}
+return
+
+
+$j::
+    If (A_PriorHotKey = "$j" AND A_TimeSincePriorHotkey < 200)
+{
+	Send {backspace}!^+1
+} else 
+Send {j}
+return
+
+
 SC056::Shift        ;the Scan Code for the left '\'
 /::Shift
 LShift::Ctrl
@@ -219,3 +288,6 @@ LAlt & v:: Send ^{v}
 LAlt & y:: Send ^{y}
 LAlt & a:: Send ^{a}
 LAlt & f:: Send ^{f}
+
+
+#If
