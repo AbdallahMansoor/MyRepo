@@ -40,6 +40,7 @@ k::Down
 j::Left
 l::Right
 backspace::delete
+CapsLock::Esc
 #If
 
 #IfWinNotActive, ahk_class MultitaskingViewFrame
