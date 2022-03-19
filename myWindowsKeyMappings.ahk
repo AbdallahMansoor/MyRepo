@@ -263,7 +263,10 @@ return
 $j::
     If (A_PriorHotKey = "$j" AND A_TimeSincePriorHotkey < 200)
 {
-	Send {backspace}!^+1
+    if if GetKeyState("Shift")
+        Send {backspace}+{f13}
+        else
+	    Send {backspace}{f13}
 } else 
 Send {j}
 return
