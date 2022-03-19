@@ -239,19 +239,14 @@ else
 Return
 
 *CapsLock up::
-    If ((A_TickCount-cDown)<400) { ; so this is the elapsed time 
-     if GetKeyState("shift")
-        if GetKeyState("Ctrl") 
-       Send {Blind}{Alt Up}^+{Esc}
+    If ((A_TickCount-cDown)<200) && ( A_PriorKey = "CapsLock" ){ 
+        if (WinActive("ahk_exe Code.exe"))
+       Send {Blind}{Alt Up}{Alt}{Esc} ; for some reason I had to press extra alt in vscode before CapsLock to function as Esc
     else
-         Send {Blind}{Alt Up}+{Esc}
-else if GetKeyState("Ctrl") 
-         Send {Blind}{Alt Up}^{Esc}
+        Send {Blind}{Alt Up}{Esc}
+    }
     else
-     Send {Blind}{Alt Up}{Esc}
-    } 
-    else
-        Send {Blind}{Alt Up}
+    Send {Blind}{Alt Up}
 Return
 
 
@@ -272,6 +267,7 @@ $j::
 } else 
 Send {j}
 return
+
 
 
 SC056::Shift        ;the Scan Code for the left '\'
