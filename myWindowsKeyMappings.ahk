@@ -289,10 +289,9 @@ return
 
 SC056::Shift        ;the Scan Code for the left '\'
 /::Shift
-+/::?
-SC056 & /::?
 LShift::Ctrl
 LAlt & .::send, /
+LAlt & '::send, ?
 #k::WinMinimize, A
 #i::WinMaximize, A 
 LAlt & BackSpace:: Send ^{BackSpace}
