@@ -47,8 +47,12 @@ CapsLock::Esc
 
 LAlt & s:: return
 LAlt & d:: return
-LAlt & Space:: Send {Space}
 LAlt:: return
+LAlt & Space::
+ if altQRunningLabel 
+ Send {Space}
+return  
+
 
 
 LAlt & i::
@@ -252,13 +256,16 @@ Return
 
 
 LAlt & q::
-    if GetKeyState("Shift")
+altQRunningLabel:=true
+    if GetKeyState("Shift"){
         Send ^+{Tab}
+    }
     else
         Send {LCtrl down}{Tab}
         KeyWait LAlt
         Send {LCtrl up}
-return
+        altQRunningLabel:=false
+return                  
 
 
 $j::
