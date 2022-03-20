@@ -48,6 +48,7 @@ CapsLock::Esc
 LAlt & s:: return
 LAlt & d:: return
 LAlt & Space:: Send {Space}
+LAlt:: return
 
 
 LAlt & i::
