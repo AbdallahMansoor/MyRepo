@@ -257,7 +257,7 @@ Return
         Send {Blind}{Alt Up}{Esc}
     }
     else
-    Send {Blind}{Alt Up}
+    Send {Alt Up}
 Return
 
 
