@@ -26,6 +26,7 @@ LAlt & q::Send ^{Tab}
 #IfWinNotActive
 */
 
+OnExit("mod_fix")
 
 #NoTrayIcon
 
@@ -33,6 +34,7 @@ LAlt & q::Send ^{Tab}
 SendMode Input
 #MaxThreads 255
 #MaxThreadsPerHotkey 255 
+#HotkeyModifierTimeout 250
 
 #IfWinActive, ahk_class MultitaskingViewFrame ; Windows 10 alt-tab switcher 'https://www.autohotkey.com/docs/Hotkeys.htm#AltTabRemarks'
 i::Up
@@ -42,6 +44,12 @@ l::Right
 backspace::delete
 CapsLock::Esc
 #If
+
+mod_fix() {
+    Loop, Parse, % "Shift,Control,Alt", % ","
+        If GetKeyState(A_LoopField)
+            SendInput, % "{" A_LoopField " Up}"
+}
 
 #IfWinNotActive, ahk_class MultitaskingViewFrame
 
@@ -59,11 +67,11 @@ LAlt & i::
 if GetKeyState("CapsLock","P")
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("Space", "P") || GetKeyState("Ctrl")
-        Send ^!+{Up}
+        Send ^!+{Up}{Space Up}
     else
         Send +!{Up}
 else if GetKeyState("Space", "P") || GetKeyState("Ctrl")
-        Send ^!{Up}
+        Send ^!{Up}{Space Up}
 else
     Send !{Up}
 
@@ -75,11 +83,11 @@ if GetKeyState("d","P")
     Send, {Up 4}
 else if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("Space", "P") || GetKeyState("Ctrl")
-        Send +^{Up}
+        Send +^{Up}{Space Up}
     else
         Send +{Up}
 else if GetKeyState("Space", "P") || GetKeyState("Ctrl")
-        Send ^{Up}
+        Send ^{Up}{Space Up}
 else
     Send {Up}
 return
@@ -88,11 +96,11 @@ LAlt & k::
 if GetKeyState("CapsLock","P")
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("Space", "P") || GetKeyState("Ctrl")
-        Send ^!+{Down}
+        Send ^!+{Down}{Space Up}
     else
         Send +!{Down}
 else if GetKeyState("Space", "P") || GetKeyState("Ctrl")
-        Send ^!{Down}
+        Send ^!{Down}{Space Up}
 else
     Send !{Down}
 
@@ -104,11 +112,11 @@ if GetKeyState("d","P")
     Send, {Down 4}
 else if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("Space", "P") || GetKeyState("Ctrl")
-        Send +^{Down}
+        Send +^{Down}{Space Up}
     else
         Send +{Down}
 else if GetKeyState("Space", "P") || GetKeyState("Ctrl")
-        Send ^{Down}
+        Send ^{Down}{Space Up}
 else
     Send {Down}
 return
