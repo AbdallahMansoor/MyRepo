@@ -1,20 +1,16 @@
 /*
+DON'T make multiple hotkeys that starts with the same modifier/key. instead, group all of them under #if GetKeyState("modifier/key").
+in AHK get away from using the Custom Combinations Hotkeys (modifier/key & key). you can use the GetKeyState function with
+the #if directive or in a conditional context to check the state of a key. also avoid involving with Alt+Tab in any way.
+
 AutoHotKey subreddit pinned post contains useful resources for handling AutoHotKey,
 including a script to know the scanCode/unicode for each key on the keyboard
 https://www.reddit.com/r/AutoHotkey/comments/4f4j9k/read_this_before_posting/
 */
 
-/* listen to a key if pressed two consecutive/twice in a certain interval and make it do a different function
-Down::
-If (A_PriorHotKey = "Down" AND A_TimeSincePriorHotkey < 400)
-{
-	Send, {Down}{Down}{Down}{Down}{Down}
-} else 
-Send {Down}
-return
-*/
 
-/* activate/deactivate certain hotkeys for certain apps
+/* 
+activate/deactivate certain hotkeys for certain apps
 GroupAdd myGroup, ahk_exe Code.exe 
 GroupAdd myGroup, ahk_exe studio64.exe
 GroupAdd myGroup, ahk_exe idea64.exe
@@ -26,15 +22,14 @@ LAlt & q::Send ^{Tab}
 #IfWinNotActive
 */
 
-OnExit("mod_fix")
-
-#NoTrayIcon
+;#NoTrayIcon
 
 #UseHook
 SendMode Input
 #MaxThreads 255
 #MaxThreadsPerHotkey 255 
-#HotkeyModifierTimeout 250
+
+
 
 #IfWinActive, ahk_class MultitaskingViewFrame ; Windows 10 alt-tab switcher 'https://www.autohotkey.com/docs/Hotkeys.htm#AltTabRemarks'
 i::Up
@@ -43,27 +38,93 @@ j::Left
 l::Right
 backspace::delete
 CapsLock::Esc
-#If
+#IfWinActive
 
-mod_fix() {
-    Loop, Parse, % "Shift,Control,Alt", % ","
-        If GetKeyState(A_LoopField)
-            SendInput, % "{" A_LoopField " Up}"
-}
 
-#IfWinNotActive, ahk_class MultitaskingViewFrame
+LAlt::return
 
-LAlt & s:: return
-LAlt & d:: return
-LAlt:: return
-LAlt & Space::
- if altQRunningLabel 
+#if GetKeyState("LAlt","P")
+*d:: return  
+*s:: return
+.::/
+'::?
+*BackSpace:: Send ^{BackSpace}
+Enter:: Send ^{Enter}
+z:: Send ^{z}
+x:: Send ^{x}
+c:: Send ^{c}
+v:: Send ^{v}
+y:: Send ^{y}
+a:: Send ^{a}
+f:: Send ^{f}
+Tab:: 
+Send {Alt down}{tab}
+KeyWait LAlt
+Send {Alt up}
+return
+Space::
+ if isAltQRunning
  Send {Space}
 return  
+b::
+e::
+g::
+h::
+m::
+n::
+o::
+r::
+t::
+w::
+1::
+2::
+3::
+4::
+5::
+6::
+7::
+8::
+9::
+0::
+Delete::
+Insert::
+Home::
+End::
+PgUp::
+PgDn::
+,::
+;::
+|::
+[::
+]::
+-::
+=::
+F1::
+F2::
+F3::
+F4::
+F5::
+F6::
+F7::
+F8::
+F9::
+F10::
+F11::
+F12::
+if  GetKeyState("Shift") 
+    if  GetKeyState("Ctrl")
+        Send !^+{%A_ThisHotkey%}
+    else
+        Send !+{%A_ThisHotkey%}
+else if GetKeyState("Ctrl")
+         Send  !^{%A_ThisHotkey%}
+else
+       Send !{%A_ThisHotkey%}
+return
 
 
 
-LAlt & i::
+*i::
 if GetKeyState("CapsLock","P")
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("Space", "P") || GetKeyState("Ctrl")
@@ -92,7 +153,8 @@ else
     Send {Up}
 return
 
-LAlt & k::
+
+*k::
 if GetKeyState("CapsLock","P")
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("Space", "P") || GetKeyState("Ctrl")
@@ -121,7 +183,8 @@ else
     Send {Down}
 return
 
-LAlt & j::
+
+j::
 if GetKeyState("CapsLock","P")
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("d", "P") || GetKeyState("Ctrl")
@@ -145,7 +208,8 @@ else
     Send {Left}
 return
 
-LAlt & l::
+
+*l::
 if GetKeyState("CapsLock","P")
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("d", "P") || GetKeyState("Ctrl")
@@ -169,7 +233,8 @@ else
     Send {Right}
 return
 
-LAlt & h::
+
+*h::
 if GetKeyState("CapsLock","P")
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("d", "P") || GetKeyState("Ctrl")
@@ -193,7 +258,8 @@ else
     Send {Home}
 return
 
-LAlt & `;::
+
+*`;::
 if GetKeyState("CapsLock","P")
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("d", "P") || GetKeyState("Ctrl")
@@ -217,7 +283,8 @@ else
     Send {End}
 return
 
-LAlt & u::
+
+*u::
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send +^{PgUp}
@@ -229,7 +296,8 @@ else
     Send {PgUp}
 return
 
-LAlt & p::
+
+*p::
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send +^{PgDn}
@@ -242,10 +310,27 @@ else
 return
 
 
+q::
+    isAltQRunning:=true
+    if GetKeyState("Shift"){
+        Send ^+{Tab}
+    }
+    else
+        Send {LCtrl down}{Tab}
+        KeyWait LAlt
+        Send {LCtrl up}
+        isAltQRunning:=false
+return   
+
+
+
+
+#if
+
+
 >!CapsLock::CapsLock
 
 *CapsLock::
-cDown := A_TickCount ; A_TickCount is the time since the script started
 if GetKeyState("shift")
     if GetKeyState("Ctrl") 
         Send {Blind}^+{Alt Down}
@@ -254,11 +339,11 @@ if GetKeyState("shift")
 else if GetKeyState("Ctrl") 
         Send {Blind}^{Alt Down}
 else
-    Send {Blind}{Alt Down}   
+    Send {Alt Down}   
 Return
 
 *CapsLock up::
-    If ((A_TickCount-cDown)<200) && ( A_PriorKey = "CapsLock" ){ 
+    If ( A_PriorKey = "CapsLock" ){ 
         if (WinActive("ahk_exe Code.exe"))
        Send {Blind}{Alt Up}{Alt}{Esc} ; for some reason I had to press extra alt in vscode before CapsLock to function as Esc
     else
@@ -269,23 +354,10 @@ Return
 Return
 
 
-LAlt & q::
-altQRunningLabel:=true
-    if GetKeyState("Shift"){
-        Send ^+{Tab}
-    }
-    else
-        Send {LCtrl down}{Tab}
-        KeyWait LAlt
-        Send {LCtrl up}
-        altQRunningLabel:=false
-return                  
-
-
 $j::
-    If (A_PriorHotKey = "$j" AND A_TimeSincePriorHotkey < 200)
+    If (A_PriorHotKey = "j" AND A_TimeSincePriorHotkey < 200) ;  I don't know how it works but it works
 {
-    if if GetKeyState("Shift")
+        if GetKeyState("Shift")
         Send {backspace}+{f13}
         else
 	    Send {backspace}{f13}
@@ -294,23 +366,11 @@ Send {j}
 return
 
 
-
 SC056::Shift        ;the Scan Code for the left '\'
 /::Shift
 LShift::Ctrl
-LAlt & .::send, /
-LAlt & '::send, ?
 #k::WinMinimize, A
 #i::WinMaximize, A 
-LAlt & BackSpace:: Send ^{BackSpace}
-LAlt & Enter:: Send ^{Enter}
-LAlt & z:: Send ^{z}
-LAlt & x:: Send ^{x}
-LAlt & c:: Send ^{c}
-LAlt & v:: Send ^{v}
-LAlt & y:: Send ^{y}
-LAlt & a:: Send ^{a}
-LAlt & f:: Send ^{f}
 
 
-#If
+
