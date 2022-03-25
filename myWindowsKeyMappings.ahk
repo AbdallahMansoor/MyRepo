@@ -22,7 +22,7 @@ LAlt & q::Send ^{Tab}
 #IfWinNotActive
 */
 
-;#NoTrayIcon
+#NoTrayIcon
 
 #UseHook
 SendMode Input
@@ -69,7 +69,6 @@ return
 b::
 e::
 g::
-h::
 m::
 n::
 o::
@@ -93,7 +92,6 @@ End::
 PgUp::
 PgDn::
 ,::
-;::
 |::
 [::
 ]::
