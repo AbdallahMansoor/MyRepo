@@ -109,6 +109,9 @@ F9::
 F10::
 F11::
 F12::
+if isAltQRunning{
+    Send {%A_ThisHotkey%
+}else
 if  GetKeyState("Shift") 
     if  GetKeyState("Ctrl")
         Send !^+{%A_ThisHotkey%}
@@ -369,6 +372,5 @@ SC056::Shift        ;the Scan Code for the left '\'
 LShift::Ctrl
 #k::WinMinimize, A
 #i::WinMaximize, A 
-
 
 
