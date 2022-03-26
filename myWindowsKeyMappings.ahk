@@ -50,13 +50,19 @@ LAlt::return
 '::?
 *BackSpace:: Send ^{BackSpace}
 Enter:: Send ^{Enter}
-z:: Send ^{z}
-x:: Send ^{x}
-c:: Send ^{c}
-v:: Send ^{v}
-y:: Send ^{y}
-a:: Send ^{a}
-f:: Send ^{f}
+z:: 
+x:: 
+c:: 
+v:: 
+y:: 
+a:: 
+f:: 
+if GetKeyState("Shift")
+         Send  ^+{%A_ThisHotkey%}
+else
+       Send ^{%A_ThisHotkey%}
+return
+
 Tab:: 
 Send {Alt down}{tab}
 KeyWait LAlt
@@ -372,5 +378,4 @@ SC056::Shift        ;the Scan Code for the left '\'
 LShift::Ctrl
 #k::WinMinimize, A
 #i::WinMaximize, A 
-
 
