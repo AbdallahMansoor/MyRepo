@@ -47,7 +47,7 @@ LAlt::return
 *d:: return  
 *s:: return
 .::/
-'::?
+,::?
 *BackSpace:: Send ^{BackSpace}
 Enter:: Send ^{Enter}
 z:: 
@@ -97,7 +97,7 @@ Home::
 End::
 PgUp::
 PgDn::
-,::
+'::
 |::
 [::
 ]::
@@ -378,4 +378,3 @@ SC056::Shift        ;the Scan Code for the left '\'
 LShift::Ctrl
 #k::WinMinimize, A
 #i::WinMaximize, A 
-
