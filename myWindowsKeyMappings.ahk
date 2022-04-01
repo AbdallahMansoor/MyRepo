@@ -47,7 +47,7 @@ d:: return
 s:: return
 .::/
 ,::?
-BackSpace:: Send ^{BackSpace}
+*BackSpace:: Send ^{BackSpace}   ; I have added * so that backspace work as delete with alt-tab menu
 Enter:: Send ^{Enter}
 z:: 
 x:: 
