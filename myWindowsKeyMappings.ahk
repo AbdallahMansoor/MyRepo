@@ -44,11 +44,11 @@ CapsLock::Esc
 LAlt::return
 
 #if GetKeyState("LAlt","P")
-*d:: return  
-*s:: return
+d:: return  
+s:: return
 .::/
 ,::?
-*BackSpace:: Send ^{BackSpace}
+BackSpace:: Send ^{BackSpace}
 Enter:: Send ^{Enter}
 z:: 
 x:: 
@@ -131,7 +131,7 @@ return
 
 
 
-*i::
+i::
 if GetKeyState("CapsLock","P")
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("Space", "P") || GetKeyState("Ctrl")
@@ -161,7 +161,7 @@ else
 return
 
 
-*k::
+k::
 if GetKeyState("CapsLock","P")
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("Space", "P") || GetKeyState("Ctrl")
@@ -216,7 +216,7 @@ else
 return
 
 
-*l::
+l::
 if GetKeyState("CapsLock","P")
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("d", "P") || GetKeyState("Ctrl")
@@ -241,7 +241,7 @@ else
 return
 
 
-*h::
+h::
 if GetKeyState("CapsLock","P")
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("d", "P") || GetKeyState("Ctrl")
@@ -266,7 +266,7 @@ else
 return
 
 
-*`;::
+`;::
 if GetKeyState("CapsLock","P")
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("d", "P") || GetKeyState("Ctrl")
@@ -291,7 +291,7 @@ else
 return
 
 
-*u::
+u::
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send +^{PgUp}
@@ -304,7 +304,7 @@ else
 return
 
 
-*p::
+p::
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send +^{PgDn}
@@ -337,28 +337,100 @@ return
 
 >!CapsLock::CapsLock
 
-*CapsLock::
+*CapsLock Up::
+    If ( A_PriorKey = "CapsLock" ){ 
 if GetKeyState("shift")
     if GetKeyState("Ctrl") 
-        Send {Blind}^+{Alt Down}
+        Send ^+{Esc}
     else
-        Send {Blind}+{Alt Down}
+        Send +{Esc}
 else if GetKeyState("Ctrl") 
-        Send {Blind}^{Alt Down}
+        Send ^{Esc}
 else
-    Send {Alt Down}   
+    Send {Esc} 
+    }  
 Return
 
-*CapsLock up::
-    If ( A_PriorKey = "CapsLock" ){ 
-        if (WinActive("ahk_exe Code.exe"))
-       Send {Blind}{Alt Up}{Alt}{Esc} ; for some reason I had to press extra alt in vscode before CapsLock to function as Esc
+#if GetKeyState("CapsLock","P")
+a::
+b::
+c::
+d::
+e::
+f::
+g::
+h::
+i::
+j::
+k::
+l::
+m::
+n::
+o::
+p::
+q::
+r::
+s::
+t::
+u::
+v::
+w::
+x::
+y::
+z::
+1::
+2::
+3::
+4::
+5::
+6::
+7::
+8::
+9::
+0::
+Space::
+Backspace::
+Delete::
+Insert::
+Home::
+End::
+PgUp::
+PgDn::
+Tab::
+Return::
+,::
+.::
+;::
+'::
+[::
+]::
+\::
+-::
+=::
+`::
+F1::
+F2::
+F3::
+F4::
+F5::
+F6::
+F7::
+F8::
+F9::
+F10::
+F11::
+F12::
+if  GetKeyState("Shift")
+    if  GetKeyState("Ctrl")
+        Send !^+{%A_ThisHotkey%}
     else
-        Send {Blind}{Alt Up}{Esc}
-    }
-    else
-    Send {Alt Up}
+      Send !+{%A_ThisHotkey%}
+else if GetKeyState("Ctrl")
+         Send  !^{%A_ThisHotkey%}
+else
+       Send !{%A_ThisHotkey%}  
 Return
+#if
 
 
 $j::
