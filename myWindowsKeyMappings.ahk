@@ -37,7 +37,6 @@ k::Down
 j::Left
 l::Right
 backspace::delete
-CapsLock::Esc
 #IfWinActive
 
 
