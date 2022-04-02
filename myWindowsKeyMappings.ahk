@@ -346,8 +346,11 @@ if GetKeyState("shift")
 else if GetKeyState("Ctrl") 
         Send ^{Esc}
 else
-    Send {Esc} 
-    }  
+    if (WinActive("ahk_class MultitaskingViewFrame"))
+    Send {Esc}{Alt up}
+    else
+    Send {Esc}
+    } 
 Return
 
 #if GetKeyState("CapsLock","P")
