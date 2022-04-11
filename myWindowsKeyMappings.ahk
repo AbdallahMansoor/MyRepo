@@ -71,6 +71,32 @@ Space::
  if isAltQRunning
  Send {Space}
 return  
+
+1::
+9::
+if isAltQRunning{
+    Send {%A_ThisHotkey%
+}else
+if  GetKeyState("Shift") 
+    if  GetKeyState("Ctrl")
+     if WinActive("ahk_exe chrome.exe")
+        Send ^+{%A_ThisHotkey%}
+        else
+        Send !^+{%A_ThisHotkey%}
+    else
+    if WinActive("ahk_exe chrome.exe")
+        Send ^+{%A_ThisHotkey%}
+        else
+        Send !+{%A_ThisHotkey%}
+else if GetKeyState("Ctrl")
+         Send  !^{%A_ThisHotkey%}
+else
+        if WinActive("ahk_exe chrome.exe")
+        Send ^{%A_ThisHotkey%}
+        else
+       Send !{%A_ThisHotkey%}
+return
+
 b::
 e::
 g::
@@ -80,7 +106,6 @@ o::
 r::
 t::
 w::
-1::
 2::
 3::
 4::
@@ -88,7 +113,6 @@ w::
 6::
 7::
 8::
-9::
 0::
 Delete::
 Insert::
