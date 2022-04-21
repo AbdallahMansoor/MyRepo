@@ -480,7 +480,7 @@ return
 
 
 *$t::
-    If (A_PriorHotKey = "*$t" AND A_TimeSincePriorHotkey < 200) ;  I don't know how it works but it works
+    If (A_PriorHotKey = "*$t" AND A_TimeSincePriorHotkey < 200) 
 {
         if GetKeyState("Shift")
         Send {backspace}+{f14}
