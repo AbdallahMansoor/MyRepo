@@ -467,9 +467,36 @@ $j::
         else
 	    Send {backspace}{f13}
 } else 
-Send {j}
+if  GetKeyState("Shift")
+    if  GetKeyState("Ctrl")
+        Send ^+{j}
+    else
+      Send +{j}
+else if GetKeyState("Ctrl")
+         Send  ^{j}
+else
+       Send {j}
 return
 
+
+*$t::
+    If (A_PriorHotKey = "*$t" AND A_TimeSincePriorHotkey < 200) ;  I don't know how it works but it works
+{
+        if GetKeyState("Shift")
+        Send {backspace}+{f14}
+        else
+	    Send {backspace}{f14}
+} else 
+if  GetKeyState("Shift")
+    if  GetKeyState("Ctrl")
+        Send ^+{t}
+    else
+      Send +{t}
+else if GetKeyState("Ctrl")
+         Send  ^{t}
+else
+       Send {t} 
+return
 
 SC056::Shift        ;the Scan Code for the left '\'
 /::Shift
