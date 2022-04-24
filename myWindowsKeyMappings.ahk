@@ -478,7 +478,7 @@ else
        Send {j}
 return
 
-
+/* 
 *$t::
     If (A_PriorHotKey = "*$t" AND A_TimeSincePriorHotkey < 200) 
 {
@@ -497,6 +497,8 @@ else if GetKeyState("Ctrl")
 else
        Send {t} 
 return
+*/
+
 
 SC056::Shift        ;the Scan Code for the left '\'
 /::Shift
