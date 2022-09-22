@@ -502,5 +502,9 @@ return
 
 SC056::Shift        ;the Scan Code for the left '\'
 ; LShift::Ctrl
+LShift::Shift
+RShift::Shift
+RCtrl::Ctrl
+LCtrl::Ctrl
 #k::WinMinimize, A
 #i::WinMaximize, A 
