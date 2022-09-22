@@ -45,8 +45,8 @@ LAlt::return
 #if GetKeyState("LAlt","P")
 d:: return  
 s:: return
-.::/
-,::?
+; .::/
+; ,::?
 *BackSpace:: Send ^{BackSpace}   ; I have added * so that backspace work as delete with alt-tab menu
 Enter:: Send ^{Enter}
 z:: 
@@ -426,7 +426,7 @@ Tab::
 Return::
 ,::
 .::
-;::
+`;::
 '::
 [::
 ]::
@@ -501,7 +501,6 @@ return
 
 
 SC056::Shift        ;the Scan Code for the left '\'
-/::Shift
-LShift::Ctrl
+; LShift::Ctrl
 #k::WinMinimize, A
 #i::WinMaximize, A 
