@@ -73,29 +73,54 @@ Space::
 return  
 
 1::
-9::
+2::
+3::
+4::
 if isAltQRunning{
     Send {%A_ThisHotkey%
 }else
 if  GetKeyState("Shift") 
     if  GetKeyState("Ctrl")
-     if WinActive("ahk_exe chrome.exe")
-        Send ^+{%A_ThisHotkey%}
-        else
         Send !^+{%A_ThisHotkey%}
     else
-    if WinActive("ahk_exe chrome.exe")
-        Send ^+{%A_ThisHotkey%}
-        else
         Send !+{%A_ThisHotkey%}
 else if GetKeyState("Ctrl")
          Send  !^{%A_ThisHotkey%}
 else
-        if WinActive("ahk_exe chrome.exe")
-        Send ^{%A_ThisHotkey%}
-        else
-       Send !{%A_ThisHotkey%}
+       Send #{%A_ThisHotkey%}
 return
+
+7::
+if isAltQRunning{
+    Send {%A_ThisHotkey%
+}else
+if  GetKeyState("Shift") 
+    if  GetKeyState("Ctrl")
+        Send !^+{%A_ThisHotkey%}
+    else
+        Send !+{%A_ThisHotkey%}
+else if GetKeyState("Ctrl")
+         Send  !^{%A_ThisHotkey%}
+else
+       Send #{5}
+return
+
+8::
+if isAltQRunning{
+    Send {%A_ThisHotkey%
+}else
+if  GetKeyState("Shift") 
+    if  GetKeyState("Ctrl")
+        Send !^+{%A_ThisHotkey%}
+    else
+        Send !+{%A_ThisHotkey%}
+else if GetKeyState("Ctrl")
+         Send  !^{%A_ThisHotkey%}
+else
+       Send #{6}
+return
+
+
 
 b::
 e::
@@ -106,13 +131,9 @@ o::
 r::
 t::
 w::
-2::
-3::
-4::
 5::
 6::
-7::
-8::
+9::
 0::
 Delete::
 Insert::
@@ -508,3 +529,4 @@ RCtrl::Ctrl
 LCtrl::Ctrl
 #k::WinMinimize, A
 #i::WinMaximize, A 
+#CapsLock::WinClose, A
