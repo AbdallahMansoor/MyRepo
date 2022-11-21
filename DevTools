@@ -1,4 +1,4 @@
 -Styles pane: when the you click the Elements pane, the Styles pane appears and it contains all the styles applied to the selected element, stacked up/listed by the 
-selector's priority/specifity, so if a property is line-crossed, it means that it is overriden by a selector higher in the specifity(i.e up in the Styles pane)
+selector's priority/specifity, so if a property is line-crossed, it means that it is overriden by a selector higher in the specifity(i.e up in the Styles pane)(https://youtu.be/Sp9ZfSvpf7A)
 
 -
