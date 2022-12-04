@@ -163,6 +163,8 @@ if GetKeyState("s", "P") || GetKeyState("Shift")
         Send +!{Up}
 else if GetKeyState("Space", "P") || GetKeyState("Ctrl")
         Send ^!{Up}{Space Up}
+else if GetKeyState("d","P") 
+    Send ^!{Up}        
 else
     Send !{Up}
 
@@ -193,7 +195,9 @@ if GetKeyState("s", "P") || GetKeyState("Shift")
         Send +!{Down}
 else if GetKeyState("Space", "P") || GetKeyState("Ctrl")
         Send ^!{Down}{Space Up}
-else
+else if GetKeyState("d","P") 
+    Send ^!{Down}
+else 
     Send !{Down}
 
     else
