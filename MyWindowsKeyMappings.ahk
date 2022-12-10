@@ -22,7 +22,7 @@ LAlt & q::Send ^{Tab}
 #IfWinNotActive
 */
 
-#NoTrayIcon
+;#NoTrayIcon
 
 #UseHook
 SendMode Input
@@ -154,7 +154,28 @@ else
        Send !{%A_ThisHotkey%}
 return
 
-
+CapsLock::
+if (WinActive("ahk_class MultitaskingViewFrame"))
+{
+    Send {Esc}
+}
+else if (isAltQRunning)
+{
+    if (WinActive("ahk_exe Code.exe"))
+    {
+    send ^{1} 
+    isAltQRunning:=false    
+    }
+     if (WinActive("ahk_exe webstorm64.exe"))
+    {
+    send {Space}
+    isAltQRunning:=false
+    }
+}
+else
+send {f15}
+Isf15sent:=true
+return
 
 i::
 if GetKeyState("CapsLock","P")
@@ -342,7 +363,7 @@ if GetKeyState("s", "P") || GetKeyState("Shift")
 else if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send ^{PgDn}
 else
-    Send {PgDn}
+    Send {PgDn}i
 return
 
 
@@ -366,8 +387,9 @@ return
 
 >!CapsLock::CapsLock
 
-*CapsLock Up::
-    If ( A_PriorKey = "CapsLock" ){ 
+CapsLock Up::
+if !Isf15sent{
+      If ( A_PriorKey = "CapsLock" ){
 if GetKeyState("shift")
     if GetKeyState("Ctrl") 
         Send ^+{Esc}
@@ -376,11 +398,12 @@ if GetKeyState("shift")
 else if GetKeyState("Ctrl") 
         Send ^{Esc}
 else
-    if (WinActive("ahk_class MultitaskingViewFrame"))
-    Send {Esc}{Alt up}
-    else
     Send {Esc}
-    } 
+    }
+    return
+}
+else
+    Isf15sent:=false
 Return
 
 #if GetKeyState("CapsLock","P")
