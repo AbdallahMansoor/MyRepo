@@ -363,7 +363,7 @@ if GetKeyState("s", "P") || GetKeyState("Shift")
 else if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send ^{PgDn}
 else
-    Send {PgDn}i
+    Send {PgDn}
 return
 
 
