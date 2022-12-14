@@ -22,9 +22,10 @@ LAlt & q::Send ^{Tab}
 #IfWinNotActive
 */
 
-;#NoTrayIcon
+#NoTrayIcon
 
-#UseHook
+;#UseHook commented it out to see if it will fix the issue when the modifiers sometimes get stuck down logically
+
 SendMode Input
 #MaxThreads 255
 #MaxThreadsPerHotkey 255 
