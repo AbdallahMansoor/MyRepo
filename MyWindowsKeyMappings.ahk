@@ -56,12 +56,20 @@ c::
 v:: 
 y:: 
 a:: 
-f:: 
 if GetKeyState("Shift")
          Send  ^+{%A_ThisHotkey%}
 else
        Send ^{%A_ThisHotkey%}
 return
+
+f::
+ if GetKeyState("Capslock", "P"){
+    send !^{%A_ThisHotkey%}
+ } else {
+    send ^{%A_ThisHotkey%}
+ }
+return
+
 
 Tab:: 
 Send {Alt down}{tab}
@@ -98,8 +106,16 @@ else
        Send !{%A_ThisHotkey%}
 return
 
-b::
 e::
+ if GetKeyState("Capslock", "P"){
+    send !^{%A_ThisHotkey%}
+ } else {
+    send !{%A_ThisHotkey%}
+ }
+return
+
+
+b::
 g::
 m::
 n::
