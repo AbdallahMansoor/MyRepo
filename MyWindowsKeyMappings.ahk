@@ -155,28 +155,10 @@ else
        Send !{%A_ThisHotkey%}
 return
 
-CapsLock::
-if (WinActive("ahk_class MultitaskingViewFrame"))
-{
-    Send {Esc}
-}
-else if (isAltQRunning)
-{
-    if (WinActive("ahk_exe Code.exe"))
-    {
-    send ^{1} 
-    isAltQRunning:=false    
-    }
-     if (WinActive("ahk_exe webstorm64.exe"))
-    {
-    send {Space}
-    isAltQRunning:=false
-    }
-}
-else
-send {f15}
-Isf15sent:=true
-return
+
+; CapsLock::
+; return
+
 
 i::
 if GetKeyState("CapsLock","P")
@@ -389,8 +371,24 @@ return
 >!CapsLock::CapsLock
 
 CapsLock Up::
-if !Isf15sent{
-      If ( A_PriorKey = "CapsLock" ){
+  if (isAltQRunning)
+{
+    if (WinActive("ahk_exe Code.exe"))
+    {
+    send {f15} ; to move focus to the active editor group in vscode 'workbench.action.focusActiveEditorGroup'
+    Send {LCtrl up}
+    isAltQRunning:=false 
+    Return
+    }
+     if (WinActive("ahk_exe webstorm64.exe"))
+    {
+    send {Space}
+    Send {LCtrl up}
+    isAltQRunning:=false
+    Return
+    }
+}
+  If ( A_PriorKey = "CapsLock" ){
 if GetKeyState("shift")
     if GetKeyState("Ctrl") 
         Send ^+{Esc}
@@ -401,10 +399,6 @@ else if GetKeyState("Ctrl")
 else
     Send {Esc}
     }
-    return
-}
-else
-    Isf15sent:=false
 Return
 
 #if GetKeyState("CapsLock","P")
