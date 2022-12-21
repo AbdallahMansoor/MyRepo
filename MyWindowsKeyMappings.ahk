@@ -70,12 +70,6 @@ f::
  }
 return
 
-
-Tab:: 
-Send {Alt down}{tab}
-KeyWait LAlt
-Send {Alt up}
-return
 Space::
  if isAltQRunning
  Send {Space}
@@ -365,9 +359,18 @@ else
     Send {PgDn}
 return
 
+Tab:: 
+Send {Alt down}{tab}
+KeyWait LAlt
+Send {LAlt up}
+return
+
 
 q::
     isAltQRunning:=true
+    if GetKeyState("LAlt"){ ;in the case of holding down Lalt+tab then Escape(without releasing Lalt), the Lalt key keeps being pressed down logically
+        Send {LAlt up}
+    }
     if GetKeyState("Shift"){
         Send ^+{Tab}
     }
@@ -379,14 +382,13 @@ q::
 return   
 
 
-
-
 #if
 
 
 >!CapsLock::CapsLock
 
 CapsLock Up::
+
   if (isAltQRunning)
 {
     if (WinActive("ahk_exe Code.exe"))
@@ -415,6 +417,11 @@ else if GetKeyState("Ctrl")
 else
     Send {Esc}
     }
+
+if GetKeyState("LAlt"){ ;in the case of holding down Lalt+tab then Escape(without releasing Lalt), the Lalt key keeps being pressed down logically
+        Send {LAlt up}
+    }
+    
 Return
 
 #if GetKeyState("CapsLock","P")
