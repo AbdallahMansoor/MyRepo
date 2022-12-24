@@ -1,0 +1,1 @@
+- use 'code.exe' from the WSL terminal instead of just 'code' to open vscode without initializing the wsl extension, I don't know why
