@@ -43,6 +43,8 @@ backspace::delete
 
 LAlt::return
 
+; *~LButton:: return ;the tilde (~) allows the pressed hotkey to be passed to the system normally, besides intercepting it.
+
 #if GetKeyState("LAlt","P")
 d:: return  
 s:: return
@@ -406,7 +408,7 @@ CapsLock Up::
     Return
     }
 }
-  If ( A_PriorKey = "CapsLock" ){
+  If ( A_PriorKey = "CapsLock" AND A_PriorHotKey != "LButton"){
 if GetKeyState("shift")
     if GetKeyState("Ctrl") 
         Send ^+{Esc}
@@ -494,6 +496,7 @@ F9::
 F10::
 F11::
 F12::
+LButton::
 if  GetKeyState("Shift")
     if  GetKeyState("Ctrl")
         Send !^+{%A_ThisHotkey%}
