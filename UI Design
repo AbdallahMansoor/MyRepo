@@ -4,6 +4,8 @@
 
 -use Devtools font editor to quickly preview and prototype different font-families, font-size and more, and it also has nice generic categorization of font-families
 
+-use DevTools box-shadow editor quickly preview and prototype different shadows for the inset in outset shadows
+
 -easing / ease bezier curves interactive editor and ready to use examples https://easings.co/
 -box shadows templates and interactive editor https://box-shadows.co/
 
