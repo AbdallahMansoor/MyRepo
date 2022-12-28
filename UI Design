@@ -1,4 +1,8 @@
--use Devtools font editor to quickly preview and prototype different font-family, font-size and more, and it also has nice generic categorization of font-families
+-line-height: make spacious desgins that looks nicer and easier to read for CSS(https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)
+
+-use Devtools font editor to quickly preview and prototype different font-families, font-size and more, and it also has nice generic categorization of font-families
 
 - easing / ease bezier curves interactive editor and ready to use examples https://easings.co/
 - box shadows templates and interactive editor https://box-shadows.co/
+
+-
