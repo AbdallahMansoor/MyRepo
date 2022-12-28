@@ -4,3 +4,6 @@
 
 -Keep it local, cache, frontend data organization, storing, retrieval,hint: store image/file url(any type of url) in the database, for faster loading 
 
+-using http headers as extra layer for reinforcing authenticity
+
+
