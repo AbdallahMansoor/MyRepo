@@ -1,4 +1,6 @@
 -line-height: this property can help to make spacious desgins that looks nicer and easier to read for CSS(https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)
+-letter-spacing: this property can also make the UI and text looks more spacious and easy to read. (for css it can be around 0.01em)
+
 
 -Gradient add liveness to the UI
 
