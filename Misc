@@ -1,1 +1,3 @@
 - use 'code.exe' from the WSL terminal instead of just 'code' to open vscode without initializing the wsl extension, I don't know why
+
+- the 'which' command: use it in the terminal to know the source of a binary or exe (e.g which ssh, which flutter)
