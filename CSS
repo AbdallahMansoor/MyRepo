@@ -18,6 +18,7 @@ MISC
 
 -remove the highlighting when a link / anchor element is clicked to make it look like native '-webkit-tap-highlight-color: transparent;'
 
+-Animating CSS Box Model properties is discouraged. Animating/animation any box model property is inherently CPU intensive; consider animating the transform property instead.(https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
 
 
 
