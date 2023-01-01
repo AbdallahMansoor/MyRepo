@@ -1,24 +1,29 @@
 POSITION PROPERTY
 
--absolute position property: The element is removed from the normal document flow, and NO SPACE IS CREATED FOR THE ELEMENT IN THE PAGE LAYOUT. It is positioned relative to its closest positioned ancestor(https://developer.mozilla.org/en-US/docs/Web/CSS/position#description) (a positioned element is an element whose computed position value is either relative, absolute, fixed, or sticky. (In other words, it's anything except static.), if any; otherwise, it is placed relative to the INITIA containing block(https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block).
+- absolute position property: The element is removed from the normal document flow, and NO SPACE IS CREATED FOR THE ELEMENT IN THE PAGE LAYOUT. It is positioned relative to its closest positioned ancestor(https://developer.mozilla.org/en-US/docs/Web/CSS/position#description) (a positioned element is an element whose computed position value is either relative, absolute, fixed, or sticky. (In other words, it's anything except static.), if any; otherwise, it is placed relative to the INITIAL containing block(https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block).
 
 VIEWPORT
 
--the viewport is affected by the browser's url bar and navigation buttons on mobile https://web.dev/state-of-css-2022/#viewport-units
+- the viewport is affected by the browser's url bar and navigation buttons on mobile https://web.dev/state-of-css-2022/#viewport-units
 
 
 FLEXBOX
 
--learn flexbox: https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
+- learn flexbox: https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
+
+
+ANIMATION AND TRANSITION
+
+- Animating CSS Box Model properties is discouraged. Animating/animation any box model property is inherently CPU intensive; consider animating the transform property instead.(https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
+
+- Animations/@keyframes in CSS have higher specificity/cascade-origin when being applied, and the properties defined in the keyframe only apply to the element while the animation is running(until the animation-duration elapses), then the element fallback to its normal state(that is the normal CSS applied to the element). you can also use 'ANIMATION-FILL-MODE' property to dictate how the state of the element will be going forward and more(https://www.joshwcomeau.com/animation/keyframe-animations/)
+
 
 MISC
 
--margins blend / overlap except when the parent element is set to display: grid or display: flex.
+- margins blend / overlap except when the parent element is set to display: grid or display: flex.
 
 
--remove the highlighting when a link / anchor element is clicked to make it look like native '-webkit-tap-highlight-color: transparent;'
-
--Animating CSS Box Model properties is discouraged. Animating/animation any box model property is inherently CPU intensive; consider animating the transform property instead.(https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
-
+- to remove the highlighting when a link/anchor element is clicked to make it look like native: '-webkit-tap-highlight-color: transparent;'
 
 
