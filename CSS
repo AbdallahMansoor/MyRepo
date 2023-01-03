@@ -11,6 +11,10 @@ FLEXBOX
 
 - learn flexbox: https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
 
+GRID
+
+- learn grid: https://css-tricks.com/snippets/css/complete-guide-grid/
+
 
 ANIMATION AND TRANSITION
 
@@ -23,9 +27,8 @@ MISC
 
 - margins blend / overlap except when the parent element is set to display: grid or display: flex.
 
-
 - to remove the highlighting when a link/anchor element is clicked to make it look like native: '-webkit-tap-highlight-color: transparent;'
 
-- CSS modal/dialog view https://web.dev/animating-modal-views/
+- CSS modal/dialog view https://web.dev/animating-modal-views/ (note: pointer-events)
 
 
