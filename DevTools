@@ -2,3 +2,5 @@
 selector's priority/specificity, so if a property is line-crossed, it means that it is overriden by a selector higher in the specificity(i.e up in the Styles pane)(https://youtu.be/Sp9ZfSvpf7A)
 
 -You can launch the debugger programmatically from your code using debugger; statement (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger)
+
+- https://developer.chrome.com/docs/devtools/console/utilities
