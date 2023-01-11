@@ -335,6 +335,18 @@ return
 
 
 u::
+if GetKeyState("CapsLock","P")
+if GetKeyState("s", "P") || GetKeyState("Shift") 
+    if GetKeyState("d", "P") || GetKeyState("Ctrl")
+        Send ^!+{PgUp}
+    else
+        Send +!{PgUp}
+else if GetKeyState("d", "P") || GetKeyState("Ctrl")
+        Send ^!{PgUp}
+else
+    Send !{PgUp}
+
+    else
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send +^{PgUp}
@@ -348,6 +360,18 @@ return
 
 
 p::
+if GetKeyState("CapsLock","P")
+if GetKeyState("s", "P") || GetKeyState("Shift") 
+    if GetKeyState("d", "P") || GetKeyState("Ctrl")
+        Send ^!+{PgDn}
+    else
+        Send +!{PgDn}
+else if GetKeyState("d", "P") || GetKeyState("Ctrl")
+        Send ^!{PgDn}
+else
+    Send !{PgDn}
+
+    else
 if GetKeyState("s", "P") || GetKeyState("Shift") 
     if GetKeyState("d", "P") || GetKeyState("Ctrl")
         Send +^{PgDn}
