@@ -31,6 +31,6 @@ MISC
 
 - CSS modal/dialog view https://web.dev/animating-modal-views/ (note: pointer-events)
 
-- you can use 'scroll-margin-top' with ':target' pseudo class (in my use case, usually setting it to arbitrarily high value).
+- you can use 'scroll-margin-top' with ':target' pseudo class (usually setting it to arbitrarily high value).
 
 
