@@ -27,8 +27,10 @@ MISC
 
 - margins blend / overlap except when the parent element is set to display: grid or display: flex.
 
-- to remove the highlighting when a link/anchor element is clicked to make it look like native: '-webkit-tap-highlight-color: transparent;'
+- to remove the highlighting when a link/anchor element is clicked to give it native-like look: '-webkit-tap-highlight-color: transparent;'
 
 - CSS modal/dialog view https://web.dev/animating-modal-views/ (note: pointer-events)
+
+- you can use 'scroll-margin-top' with ':target' pseudo class (and usually setting it to arbitrarily high value).
 
 
