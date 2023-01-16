@@ -8,3 +8,4 @@
 
 - dispatch/fake an event on an element  https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent 
 
+- clearTimeout(timeoutID), clearInterval(intervalID) methods cancels a timeout,interval previously established by calling setTimeout(), setInterval().
