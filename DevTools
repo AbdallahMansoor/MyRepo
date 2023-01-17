@@ -5,4 +5,6 @@ selector's priority/specificity, so if a property is line-crossed, it means that
 
 - Network panel(size column): you can inspect if a network resource was fetched from the cache or through the network.
 
+- override response headers 
+
 - https://developer.chrome.com/docs/devtools/console/utilities
