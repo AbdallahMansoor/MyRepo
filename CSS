@@ -33,4 +33,8 @@ MISC
 
 - you can use 'scroll-margin-top' with ':target' pseudo class (usually setting it to arbitrarily high value).
 
+- in javascript, you can control the sequence of how style changes gets applied to an element visually using requestAnimationFrame, (meaning: apply this change, then paint, then apply this change), here is a use case https://youtu.be/P2glQ0fz7DM?list=PLNYkxOF6rcIBmqosTU2eg82bqSrT3WMt1&t=2840
+
+-
+
 
