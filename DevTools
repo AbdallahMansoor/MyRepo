@@ -5,6 +5,9 @@ selector's priority/specificity, so if a property is line-crossed, it means that
 
 - Network panel(size column): you can inspect if a network resource was fetched from the cache or through the network.
 
-- override response headers 
+- override response headers
+
+- top-level await in the console panel(e.g. response = await fetch('/home')) 
 
 - https://developer.chrome.com/docs/devtools/console/utilities
+
