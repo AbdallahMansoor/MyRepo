@@ -1,7 +1,7 @@
 
 SELECTORS
 
-- partial / regex-like matching using the attribute selector (e.g. [attr^=val] selects any element with the 'attr' attribute whose value begins with 'val') (https://www.w3.org/TR/selectors-4/#attribute-selectors).
+- partial / regex-like matching for attribute values (e.g. [attr^=val] selects any element with the 'attr' attribute whose value begins with 'val') (https://www.w3.org/TR/selectors-4/#attribute-selectors).
 
 
 POSITION PROPERTY
