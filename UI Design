@@ -1,11 +1,10 @@
--line-height: this property can help to make spacious desgins that looks nicer and easier to read for CSS(https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)
+-line-height: this property can help to make spacious desgins that looks nicer and easier to read, for CSS(https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)
 -letter-spacing: this property can also make the UI and text looks more spacious and easy to read. (for css it can be around 0.01em)
 
 
 -Gradient add liveness to the UI
 
 -use Devtools font editor to quickly preview and prototype different font-families, font-size and more, and it also has nice generic categorization of font-families
-
 -use DevTools box-shadow editor quickly preview and prototype different shadows for the inset in outset shadows
 
 -box shadows templates and interactive editor https://box-shadows.co/
