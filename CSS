@@ -26,8 +26,9 @@ ANIMATION AND TRANSITION
 
 - Animating CSS Box Model properties is discouraged. Animating/animation any box model property is inherently CPU intensive; consider animating the transform property instead.(https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
 
-- Animations/@keyframes in CSS have higher specificity/cascade-origin when being applied, and the properties defined in the keyframe only apply to the element while the animation is running(until the animation-duration elapses), then the element fallback to its normal state(that is the normal CSS applied to the element). you can also use 'ANIMATION-FILL-MODE' property to dictate how the state of the element will be going forward and more(https://www.joshwcomeau.com/animation/keyframe-animations/)
+- Animations/@keyframes in CSS have high specificity/cascade-origin when being applied, and the properties defined in the keyframe only apply to the element while the animation is running(until the animation-duration elapses), then the element fallback to its normal state(that is the normal CSS applied to the element).
 
+- you can use 'ANIMATION-FILL-MODE' property to dictate how the state of the element will be going forward(after the animation end) and more(https://www.joshwcomeau.com/animation/keyframe-animations/)
 
 MISC
 
@@ -39,7 +40,7 @@ MISC
 
 - you can use 'scroll-margin-top' with ':target' pseudo class (usually setting it to arbitrarily high value).
 
-- in javascript, you can control the sequence of how style changes gets applied to an element visually using requestAnimationFrame, (meaning: apply this change, then paint, then apply this change), here is a use case https://youtu.be/P2glQ0fz7DM?list=PLNYkxOF6rcIBmqosTU2eg82bqSrT3WMt1&t=2840
+- in javascript, you can control the sequence of how style changes gets applied to an element visually using requestAnimationFrame(it's works like window.requestIdleCallback()), (meaning: apply this change, then paint first, then apply this change), here is a use case https://youtu.be/P2glQ0fz7DM?list=PLNYkxOF6rcIBmqosTU2eg82bqSrT3WMt1&t=2840
 
 
 
