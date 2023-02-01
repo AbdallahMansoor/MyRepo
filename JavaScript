@@ -1,5 +1,7 @@
 - clearTimeout(timeoutID), clearInterval(intervalID) methods cancels a timeout,interval previously established by calling setTimeout(), setInterval().
 
+-   const $ = query => document.getElementById(query);
+    const $$ = query => document.body.querySelector(query);
 
 
 DOM APIS
