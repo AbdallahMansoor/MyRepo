@@ -6,5 +6,5 @@
 
 DOM APIS
 
-- making customEvents and dispatching/faking a built-in or custom event on an element 
+- making customEvents and dispatching/faking a built-in or custom event on an element.(e.g element.dispatchEvent(new CustomEvent(type, { detail: detail })); element.addEventListener(type, callback);)
 
