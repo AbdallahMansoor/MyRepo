@@ -46,6 +46,7 @@ MISC
 
 - in javascript, you can control the sequence of how style changes gets applied to an element visually using requestAnimationFrame(it's works like window.requestIdleCallback()), (meaning: apply this change, then paint first, then apply this change), here is a use case https://youtu.be/P2glQ0fz7DM?list=PLNYkxOF6rcIBmqosTU2eg82bqSrT3WMt1&t=2840
 
+- :has(:target)
 
 
 
