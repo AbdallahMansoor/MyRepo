@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style cssReset foldme>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html,
+        body {
+            height: 100%;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img,
+        picture,
+        video,
+        canvas,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        input,
+        button,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            overflow-wrap: break-word;
+        }
+    </style>
+    <script type="module" >
+        function importHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain attribute:*/
+                file = elmnt.getAttribute("import");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { 
+                                // replace the element with the imported file, but don't forget to also execute the script tags in the imported file 
+                                elmnt.innerHTML = this.responseText;
+                                var scripts = elmnt.getElementsByTagName("script");
+                                // loop through the scripts, create new script tags and replace the old ones
+                                for (var i = 0; i < scripts.length; i++) {
+                                    var newScript = document.createElement("script");
+                                    newScript.text = scripts[i].text;
+                                    // copy over the attributes
+                                    for (var j = 0; j < scripts[i].attributes.length; j++) {
+                                        newScript.setAttribute(scripts[i].attributes[j].name, scripts[i].attributes[j].value);
+                                    }
+                                    // replace the old script tag with the new one
+                                    scripts[i].parentNode.replaceChild(newScript, scripts[i]);
+                                }
+                            }
+                            if (this.status == 404) { elmnt.innerHTML = `page (${file}) not found`; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("import");
+                            importHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+        importHTML();
+    </script>
+    <script src="https://unpkg.com/style-scoped/scoped.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div import="temp.html"></div>
+</body>
+
+
+</html>
