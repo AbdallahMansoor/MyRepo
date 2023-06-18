@@ -2,4 +2,4 @@
 
 - Revert (it makes a new commit that undoes the specified commit): so you don't lose any data, also as a way to store experimental ideas (in a certain commit, and then revert) without the need to create a whole branch for it.
 
--
+- using git cherry-pick to cherry-pick certain commits into another location in the tree
