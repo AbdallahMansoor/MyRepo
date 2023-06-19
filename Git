@@ -4,4 +4,4 @@
 
 - using git cherry-pick to cherry-pick certain commits into another location in the tree
 
-- git 'fetch/push' should be followed by 'refspec' to specify the mapping of things fetched/pushed between the local and the remote repos, if the 'dist' is omitted it means to update the same ref as the 'src'. (https://git-scm.com/docs/git-push)
+- git 'fetch/push' should be followed by 'refspec' to specify the mapping of references fetched/pushed between the local and the remote repos, if the 'dist' is omitted it means to update the same ref as the 'src'. (https://git-scm.com/docs/git-push)
