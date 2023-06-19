@@ -4,5 +4,8 @@
 
 - using git cherry-pick to cherry-pick certain commits into another location in the tree
 
-- git 'fetch/push' should be followed by 'refspec' to specify the mapping of references fetched/pushed between the local and the remote repos, if the 'dist' is omitted it means to update the same ref as the 'src' (i.e. git push origin main). (https://git-scm.com/docs/git-push)
+- git 'fetch/push' should be followed by 'refspec' to specify the mapping of references fetched/pushed between the local and the remote repos. if the 'dist' is omitted it means to update the same refs as the 'src' (i.e. git push origin main). (https://git-scm.com/docs/git-push)
 - Hence, if you want to push all branches and all tags, you can run "git push origin 'refs/heads*' 'refs/tags*'". 
+- for fetch, "git fetch -u origin 'refs/heads*:refs/heads*' 'refs/tags*:refs/tags*'", when using fetch, I have to put -u flag for internal git issue, and in fetch you can't omit dist.
+
+- 
