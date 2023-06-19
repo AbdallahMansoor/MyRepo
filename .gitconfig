@@ -1,0 +1,18 @@
+[user]
+	email = abdallahzalat66@gmail.com
+	name = abdallahmansour6
+[core]
+	pager = cat
+[init]
+	defaultBranch = main
+[credential]
+	helper = cache 
+	
+[push]
+	followTags = true
+
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
