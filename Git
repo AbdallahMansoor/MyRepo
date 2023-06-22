@@ -8,4 +8,4 @@
 - Hence, if you want to push all branches and all tags, you can run "git push origin 'refs/heads*' 'refs/tags*'". 
 - for fetch, "git fetch -u origin 'refs/heads*:refs/heads*' 'refs/tags*:refs/tags*'", when using fetch, I have to put -u flag for internal git issue, and in fetch you can't omit dist.
 
-- 
+- to connect to a remote repository for pushing or fetching/pulling : "git remote add origin {URL}"
