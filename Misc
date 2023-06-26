@@ -6,4 +6,6 @@
 
 - using http headers as extra layer for reinforcing authenticity
 
+- to connect to WSL from your LAN (e.g. mobile browser): (https://learn.microsoft.com/en-us/windows/wsl/networking), you can the internal IP of the WSL using the command 'ip addr'
+
 
