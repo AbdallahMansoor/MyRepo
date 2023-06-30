@@ -36,6 +36,8 @@ ANIMATION AND TRANSITION
 
 MISC
 
+- How the browser calculates ' auto ' width / height for an element : (https://www.w3.org/TR/CSS21/visudet.html) 
+
 - margins blend / overlap except when the parent element is set to display: grid or display: flex.
 
 - to remove the highlighting when a link/anchor element is clicked to give it native-like look: '-webkit-tap-highlight-color: transparent;'
