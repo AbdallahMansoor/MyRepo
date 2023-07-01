@@ -1,4 +1,4 @@
-- use 'code.exe' from the WSL terminal instead of just 'code' to open vscode without initializing the wsl extension, I don't know why
+- use 'code.exe' from the WSL terminal instead of just 'code' to open vscode without initializing the wsl extension. (related resource: https://github.com/microsoft/vscode/issues/43237)
 
 - the 'which' command: use it in the terminal to know the source of a binary or exe (e.g which ssh, which flutter)
 
@@ -6,6 +6,5 @@
 
 - using http headers as extra layer for reinforcing authenticity
 
-- to connect to WSL from your LAN (e.g. mobile browser): (https://learn.microsoft.com/en-us/windows/wsl/networking), you can the internal IP of the WSL using the command 'ip addr'
-
-
+- to connect to WSL 2 from your LAN (e.g. mobile browser): (https://learn.microsoft.com/en-us/windows/wsl/networking), you can the internal IP of the WSL using the command 'ip addr'
+- use WSL 1 for better performance and networking simplicity
