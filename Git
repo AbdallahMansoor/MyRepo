@@ -1,6 +1,6 @@
 - A branch is a movable pointer(movable tag), it moves to the new commit as long as you were checked-out on this branch
 
-- Revert (it makes a new commit that undoes the specified commit): so you don't lose any data, also as a way to store experimental ideas (make a certain commit, and then revert it) without the need to create a whole branch for it.
+- Revert (it makes a new commit that undoes the specified commit): so you don't lose any data, also as a way to store experimental ideas (make a certain commit, and then revert it) without the need to create a whole branch for it. (usage: git revert HEAD/commit-hash)
 
 - using git cherry-pick to cherry-pick certain commits into another location in the tree
 
