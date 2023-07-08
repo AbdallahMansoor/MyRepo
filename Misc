@@ -6,5 +6,7 @@
 
 - using http headers as extra layer for reinforcing authenticity
 
-- to connect to WSL 2 from your LAN (e.g. mobile browser): (https://learn.microsoft.com/en-us/windows/wsl/networking), you can the internal IP of the WSL using the command 'ip addr'
+- to connect to WSL 2 from your LAN (e.g. mobile browser): (https://learn.microsoft.com/en-us/windows/wsl/networking), you can the view internal IP of the WSL using the command 'ip addr'
 - use WSL 1 for better performance and networking simplicity
+
+- Chrome flag: "Insecure origins treated as secure", to treat certain origins as secure ones even though they are not (e.g. http://localhost). (https://web.dev/how-to-use-local-https/)
