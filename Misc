@@ -10,3 +10,5 @@
 - use WSL 1 for better performance and networking simplicity
 
 - Chrome flag: "Insecure origins treated as secure", to treat certain origins as secure ones even though they are not (e.g. http://localhost). (https://web.dev/how-to-use-local-https/)
+
+- Storage and cache for the web: https://web.dev/storage-for-the-web/
