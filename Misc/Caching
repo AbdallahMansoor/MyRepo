@@ -1,0 +1,26 @@
+- Service Workers : https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API (annotated by Diigo extension)
+
+- Use HTML5 <link rel="prefetch" href="..."> to prefetch (statically and dynamically) any type of data, for example: 
+            const link = document.createElement('link');
+            link.rel = 'prefetch';
+            link.href = '/api/data';
+            document.head.appendChild(link);
+
+- 
+
+
+
+
+
+
+
+
+
+
+
+--------------------
+RESOURCES:
+
+- Storage and cache for the web: https://web.dev/storage-for-the-web/
+- Service worker caching and HTTP caching: https://web.dev/service-worker-caching-and-http-caching/
+
