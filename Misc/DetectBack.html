@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <main>
+        this is the main content
+    </main>
+    <button>
+        <a href="#second-heading" style="text-decoration: none;">go to second heading </a>
+    </button>
+    <button>
+        <a href="#first-heading" style="text-decoration: none;">go to first heading </a>
+    </button>
+    <h1 class="first" id="first-heading">My First Heading</h1>
+    <p>My first paragraph.</p>
+    <p>My second paragraph.</p>
+    <p>My third paragraph.</p>
+    <p>My fourth paragraph.</p>
+    <p>My fifth paragraph.</p>
+    <p>My sixth paragraph.</p>
+    <h1 class="second" id="second-heading">My Second Heading</h1>
+    <p>My seventh paragraph.</p>
+    <p>My eighth paragraph.</p>
+    <p>My ninth paragraph.</p>
+
+
+    <style>
+        :target {
+            background-color: skyblue;
+            scroll-margin-top: 1000vh;
+        }
+
+        a {
+            color: black;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <script>
+        const btn = document.querySelector('button');
+        const secondHeading = document.querySelector('.second');
+        const anchor = document.querySelector('a');
+        const main = document.querySelector('main');
+
+        const handleHashChange = () => {
+            hashHistory = [window.location.hash];
+            historyLength = window.history.length;
+
+
+            function detectBack() {
+                var hash = window.location.hash, length = window.history.length;
+                if (hashHistory.length && historyLength == length) {
+                    if (hashHistory[hashHistory.length - 2] == hash) {
+                        hashHistory = hashHistory.slice(0, -1);
+                        return true; // it is back navigation
+
+                    } else { // then it is forward navigation
+                        hashHistory.push(hash);
+                    }
+                } else { // new navigation
+                    hashHistory.push(hash);
+                    historyLength = length;
+                }
+            }
+                
+           return function route () {
+                switch (window.location.hash) {
+                    case '#second-heading':
+                        main.innerHTML = 'this is the second heading';
+                        console.log(detectBack());
+                        break;
+                    case '#first-heading':
+                        main.innerHTML = 'this is the first heading';
+                        console.log(detectBack());
+                        break;
+                    default:
+                        main.innerHTML = 'this is the main content';
+                        console.log(detectBack());
+                        break;
+                }
+            }
+        }
+
+        window.addEventListener('hashchange', handleHashChange());
+
+
+    </script>
+</body>
+
+</html>
