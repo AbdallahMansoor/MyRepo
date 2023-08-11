@@ -45,7 +45,7 @@ View Transition API
 -https://github.com/WICG/view-transitions/blob/main/explainer.md
 -https://www.w3.org/TR/css-view-transitions-1/
 
-- the document.startViewTransition() will map the element with a certain 'view-transition-name' from the old state (i.e before calling document.startViewTransition()) to the element with the same 'view-transition-name' in the new state, where '::view-transition-old(name)' would hold the visual representation(as a screenshot) of the old element, and ::view-transition-new(name) holds the visual representation of the new element, and ::view-transition-group(name) would animate the position and size from the old element to the new one.
+- the document.startViewTransition() will map the element with a given 'view-transition-name' from the old state (i.e before calling document.startViewTransition()) to the element with the same 'view-transition-name' in the new state, where '::view-transition-old(name)' would hold the visual representation(as a screenshot) of the old element, and ::view-transition-new(name) holds the visual representation of the new element, and ::view-transition-group(name) would animate the position and size from the old element to the new one.
 
 - if two elements have the same 'view-transition-name' in the old / new state, the transition will be skipped and the promise returned from document.startViewTransition().ready would reject. 
 
