@@ -1,4 +1,10 @@
+# --------------- MY NOTES ----------------
+# I didn't install NVM because it makes the startup time of the terminal very slow, so I installed nodejs and npm using NodeSource (https://github.com/nodesource/distributions)  
 
+
+
+
+------------------------------------------------------------------------------------
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -6,7 +12,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # set CDPATH 
-CDPATH="/mnt/c/Users/abdal/Desktop:/mnt/d"
+CDPATH="/mnt/c/Users/Abdallah/Desktop:/mnt/d"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -75,7 +81,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm zsh-nvm)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,7 +116,7 @@ PS1='%F{green}%n%f@%F{blue}%m%f:%~$ '
 # to set aliases for GitHub Copilot CLI commands
 eval "$(github-copilot-cli alias -- "$0")"
 # set the starting directory to windows desktop
-cd /mnt/c/Users/abdal/Desktop
+cd /mnt/c/Users/Abdallah/Desktop
 
 alias cd1="cd .."
 alias cd2="cd ../.."
@@ -227,7 +233,6 @@ bindkey  '^Z' undo
 
 
 bindkey '^Y' redo
-
 
 
 
