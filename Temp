@@ -1,0 +1,4 @@
+  window.decorView.isForceDarkAllowed = false
+        window.statusBarColor= Color.WHITE
+        window.navigationBarColor= Color.WHITE
+        WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = true
