@@ -411,7 +411,27 @@ return
 
 >!CapsLock::CapsLock
 
+CapsLock::
+if not GetKeyState("Alt","P"){ ; if Alt key is already pressed down physically, then no need to send Alt key down
+    Sendinput {alt down}
+        Sendinput {Blind}{sc0E9} ; to deactivate highlighting application Menu bar first letters (for accessebility) in Windows (https://www.youtube.com/watch?v=vRld4bVFrpU&lc=UgzMjkQd4rbmvRDqU9h4AaABAg&ab_channel=TaranVanHemert)
+    }
+    
+    if (A_PriorHotkey != A_ThisHotkey){
+    timeWhenFirstCapsLockPressed := A_TickCount
+    }
+
+return
+
 CapsLock Up::
+
+    if (WinActive("ahk_class MultitaskingViewFrame")){
+        sendinput {Esc}
+        sendinput {alt up}
+        Return
+    }
+
+    sendinput {alt up}
 
   if (isAltQRunning)
 {
@@ -430,7 +450,7 @@ CapsLock Up::
     Return
     }
 }
-  If ( A_PriorKey = "CapsLock" ){
+  If ( A_PriorKey = "CapsLock") && (A_TickCount - timeWhenFirstCapsLockPressed < 300){
 if GetKeyState("shift")
     if GetKeyState("Ctrl") 
         Send ^+{Esc}
@@ -442,93 +462,9 @@ else
     Send {Esc}
     }
 
-if GetKeyState("LAlt"){ ;in the case of holding down Lalt+tab then Escape(without releasing Lalt), the Lalt key keeps being pressed down logically
-        Send {LAlt up}
-    }
     
 Return
 
-#if GetKeyState("CapsLock","P")
-a::
-b::
-c::
-d::
-e::
-f::
-g::
-h::
-i::
-j::
-k::
-l::
-m::
-n::
-o::
-p::
-q::
-r::
-s::
-t::
-u::
-v::
-w::
-x::
-y::
-z::
-1::
-2::
-3::
-4::
-5::
-6::
-7::
-8::
-9::
-0::
-Space::
-Backspace::
-Delete::
-Insert::
-Home::
-End::
-PgUp::
-PgDn::
-Tab::
-Return::
-,::
-.::
-`;::
-'::
-[::
-]::
-\::
-/::
--::
-=::
-`::
-F1::
-F2::
-F3::
-F4::
-F5::
-F6::
-F7::
-F8::
-F9::
-F10::
-F11::
-F12::
-if  GetKeyState("Shift")
-    if  GetKeyState("Ctrl")
-        Send !^+{%A_ThisHotkey%}
-    else
-      Send !+{%A_ThisHotkey%}
-else if GetKeyState("Ctrl")
-         Send  !^{%A_ThisHotkey%}
-else
-       Send !{%A_ThisHotkey%}  
-Return
-#if
 
 
 $j::
