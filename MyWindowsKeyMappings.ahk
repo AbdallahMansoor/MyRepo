@@ -15,6 +15,7 @@ GroupAdd myGroup, ahk_exe Code.exe
 GroupAdd myGroup, ahk_exe studio64.exe
 GroupAdd myGroup, ahk_exe idea64.exe
 GroupAdd myGroup, ahk_exe webstorm64.exe 
+
 ;this block of code should be at the top of the file ( the so called auto-execute section) and followed by its #IfWin statement 
      
 #IfWinNotActive ahk_group myGroup
@@ -28,7 +29,17 @@ LAlt & q::Send ^{Tab}
 
 SendMode Input
 #MaxThreads 255
-#MaxThreadsPerHotkey 255 
+
+
+; Making Context sensitive hotkeys for Adobe apps
+GroupAdd AdobeApps, ahk_exe Photoshop.exe
+GroupAdd AdobeApps, ahk_exe Illustrator.exe
+GroupAdd AdobeApps, ahk_exe InDesign.exe
+GroupAdd AdobeApps, ahk_exe Acrobat.exe
+GroupAdd AdobeApps, ahk_exe AfterFX.exe
+GroupAdd AdobeApps, ahk_exe Premiere.exe
+GroupAdd AdobeApps, ahk_exe Audition.exe
+GroupAdd AdobeApps, ahk_exe Adobe Premiere Pro.exe
 
 
 
@@ -41,8 +52,38 @@ backspace::delete
 #IfWinActive
 
 
+
+; if the group that contains Adobe apps is active
+#ifWinActive ahk_group AdobeApps
+
+; click shift twice to send f19
+*~Shift::
+    KeyWait, Shift
+    KeyWait, Shift, D T0.3 
+    if ErrorLevel
+        return
+    else {
+        if GetKeyState("Ctrl")
+            if GetKeyState("Alt")
+                Send ^!{f19}
+            else 
+                Send ^{f19}
+        else if GetKeyState("Alt")
+                Send !{f19}
+        else
+            Send {f19}
+    }
+return
+
+#ifWinActive ; end of #ifWinActive ahk_group AdobeApps
+
+
+
 LAlt::return
 
+
+
+#MaxThreadsPerHotkey 255 
 #if GetKeyState("LAlt","P")
 d:: return  
 s:: return
@@ -166,8 +207,6 @@ else
 return
 
 
-; CapsLock::
-; return
 
 
 i::
@@ -406,12 +445,12 @@ q::
 return   
 
 
-#if
-
+#if ; end of GetKeyState("LAlt","P") context
+#MaxThreadsPerHotkey
 
 >!CapsLock::CapsLock
 
-CapsLock::
+*CapsLock::
 if not GetKeyState("Alt","P"){ ; if Alt key is already pressed down physically, then no need to send Alt key down
     Sendinput {alt down}
         Sendinput {Blind}{sc0E9} ; to deactivate highlighting application Menu bar first letters (for accessebility) in Windows (https://www.youtube.com/watch?v=vRld4bVFrpU&lc=UgzMjkQd4rbmvRDqU9h4AaABAg&ab_channel=TaranVanHemert)
@@ -423,7 +462,7 @@ if not GetKeyState("Alt","P"){ ; if Alt key is already pressed down physically, 
 
 return
 
-CapsLock Up::
+*CapsLock Up::
 
     if (WinActive("ahk_class MultitaskingViewFrame")){
         sendinput {Esc}
@@ -467,53 +506,33 @@ Return
 
 
 
-$j::
-    If (A_PriorHotKey = "j" AND A_TimeSincePriorHotkey < 200) ;  I don't know how it works but it works
-{
-        if GetKeyState("Shift")
-        Send {backspace}+{f13}
-        else
-	    Send {backspace}{f13}
-} else 
-if  GetKeyState("Shift")
-    if  GetKeyState("Ctrl")
-        Send ^+{j}
-    else
-      Send +{j}
-else if GetKeyState("Ctrl")
-         Send  ^{j}
-else
-       Send {j}
-return
+; $j::
+;     If (A_PriorHotKey = "j" AND A_TimeSincePriorHotkey < 200) ;  I don't know how it works but it works
+; {
+;         if GetKeyState("Shift")
+;         Send {backspace}+{f13}
+;         else
+; 	    Send {backspace}{f13}
+; } else 
+; if  GetKeyState("Shift")
+;     if  GetKeyState("Ctrl")
+;         Send ^+{j}
+;     else
+;       Send +{j}
+; else if GetKeyState("Ctrl")
+;          Send  ^{j}
+; else
+;        Send {j}
+; return
 
-/* 
-*$t::
-    If (A_PriorHotKey = "*$t" AND A_TimeSincePriorHotkey < 200) 
-{
-        if GetKeyState("Shift")
-        Send {backspace}+{f14}
-        else
-	    Send {backspace}{f14}
-} else 
-if  GetKeyState("Shift")
-    if  GetKeyState("Ctrl")
-        Send ^+{t}
-    else
-      Send +{t}
-else if GetKeyState("Ctrl")
-         Send  ^{t}
-else
-       Send {t} 
-return
-*/
+
 
 
 SC056::Shift        ;the Scan Code for the left '\'
-; LShift::Ctrl
-LShift::Shift
-RShift::Shift
-RCtrl::Ctrl
-LCtrl::Ctrl
+; LShift::Shift
+; RShift::Shift
+; RCtrl::Ctrl
+; LCtrl::Ctrl
 #k::WinMinimize, A
 #i::WinMaximize, A 
 #CapsLock::WinClose, A
