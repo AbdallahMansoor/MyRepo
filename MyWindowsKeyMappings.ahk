@@ -75,6 +75,28 @@ backspace::delete
     }
 return
 
+; map the middle button to send h for hand tool in Adobe apps 
+*~MButton::h
+
+; click on space bar twice to send f18
+*~Space::
+    KeyWait, Space
+    KeyWait, Space, D T0.3 
+    if ErrorLevel
+        return
+    else {
+        if GetKeyState("Ctrl")
+            if GetKeyState("Alt")
+                Send ^!{f18}
+            else 
+                Send ^{f18}
+        else if GetKeyState("Alt")
+                Send !{f18}
+        else
+            Send {f18}
+    }
+return
+
 #ifWinActive ; end of #ifWinActive ahk_group AdobeApps
 
 
