@@ -79,6 +79,39 @@ return
 
 
 
+*f9::
+    KeyWait, f9
+    KeyWait, f9, D T0.3 
+    if ErrorLevel
+        send {f9}
+    else {
+        ; the path to chrome stable, not canary
+        if WinExist("ahk_exe C:\Program Files\Google\Chrome\Application\chrome.exe")
+            {
+            if WinActive("ahk_exe C:\Program Files\Google\Chrome\Application\chrome.exe")
+                {
+                Send ^t
+                Sleep 100
+                
+                }
+            else
+                {
+                WinActivate, ahk_exe C:\Program Files\Google\Chrome\Application\chrome.exe
+                WinWaitActive, ahk_exe C:\Program Files\Google\Chrome\Application\chrome.exe
+                Send ^t
+                }
+            }
+        else
+            {
+            Run, "C:\Program Files\Google\Chrome\Application\chrome.exe"
+            WinWaitActive, ahk_exe chrome.exe
+            ; it opens a new tab on running anyways
+            }
+    }
+return
+
+
+
 LAlt::return
 
 
