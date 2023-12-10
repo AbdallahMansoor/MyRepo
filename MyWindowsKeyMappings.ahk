@@ -110,7 +110,6 @@ return
 
 $*LAlt::return
 
-#MaxThreadsPerHotkey 255
 #if GetKeyState("LAlt","P")
     *d::
     *s::
@@ -219,103 +218,105 @@ $*LAlt::return
     return
 
     *i::
-            if GetKeyState("d","P")
-                if GetKeyState("s", "P") || GetKeyState("Shift","p")
-                    Send, +{Up 4}
-                else
-                    Send, {Up 4}
-            else if GetKeyState("s", "P") || GetKeyState("Shift","p")
-                    Send +{Up}
+        if GetKeyState("d","P")
+            if GetKeyState("s", "P") || GetKeyState("Shift","p")
+                Send, +{Up 4}
             else
-                Send {Up}
+                Send, {Up 4}
+        else if GetKeyState("s", "P") || GetKeyState("Shift","p")
+            Send +{Up}
+        else
+            Send {Up}
     return
 
     *k::
-            if GetKeyState("d","P")
-                if GetKeyState("s", "P") || GetKeyState("Shift","p")
-                    Send, +{Down 4}
-                else
-                    Send, {Down 4}
-            else if GetKeyState("s", "P") || GetKeyState("Shift","p")
-                    Send +{Down}
+        if GetKeyState("d","P")
+            if GetKeyState("s", "P") || GetKeyState("Shift","p")
+                Send, +{Down 4}
             else
-                Send {Down}
+                Send, {Down 4}
+        else if GetKeyState("s", "P") || GetKeyState("Shift","p")
+            Send +{Down}
+        else
+            Send {Down}
     return
 
     *j::
-            if GetKeyState("s", "P") || GetKeyState("Shift","p")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
-                    Send +^{Left}
-                else
-                    Send +{Left}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
-                Send ^{Left}
+        if GetKeyState("s", "P") || GetKeyState("Shift","p")
+            if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
+                Send +^{Left}
             else
-                Send {Left}
+                Send +{Left}
+        else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
+            Send ^{Left}
+        else
+            Send {Left}
     return
 
     *l::
-                   if GetKeyState("s", "P") || GetKeyState("Shift","p")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
-                    Send +^{Right}
-                else
-                    Send +{Right}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
-                Send ^{Right}
+        if GetKeyState("s", "P") || GetKeyState("Shift","p")
+            if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
+                Send +^{Right}
             else
-                Send {Right}
+                Send +{Right}
+        else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
+            Send ^{Right}
+        else
+            Send {Right}
     return
 
     *h::
-            if GetKeyState("s", "P") || GetKeyState("Shift","p")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
-                    Send +^{Home}
-                else
-                    Send +{Home}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
-                Send ^{Home}
+        if GetKeyState("s", "P") || GetKeyState("Shift","p")
+            if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
+                Send +^{Home}
             else
-                Send {Home}
+                Send +{Home}
+        else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
+            Send ^{Home}
+        else
+            Send {Home}
     return
 
     *`;::
-            if GetKeyState("s", "P") || GetKeyState("Shift","p")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
-                    Send +^{End}
-                else
-                    Send +{End}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
-                Send ^{End}
+        if GetKeyState("s", "P") || GetKeyState("Shift","p")
+            if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
+                Send +^{End}
             else
-                Send {End}
+                Send +{End}
+        else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
+            Send ^{End}
+        else
+            Send {End}
     return
 
     *u::
-            if GetKeyState("s", "P") || GetKeyState("Shift","p")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
-                    Send +^{PgUp}
-                else
-                    Send +{PgUp}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
-                Send ^{PgUp}
+        if GetKeyState("s", "P") || GetKeyState("Shift","p")
+            if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
+                Send +^{PgUp}
             else
-                Send {PgUp}
+                Send +{PgUp}
+        else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
+            Send ^{PgUp}
+        else
+            Send {PgUp}
     return
 
     *p::
-            if GetKeyState("s", "P") || GetKeyState("Shift","p")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
-                    Send +^{PgDn}
-                else
-                    Send +{PgDn}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
-                Send ^{PgDn}
+        if GetKeyState("s", "P") || GetKeyState("Shift","p")
+            if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
+                Send +^{PgDn}
             else
-                Send {PgDn}
+                Send +{PgDn}
+        else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
+            Send ^{PgDn}
+        else
+            Send {PgDn}
     return
 
+    #MaxThreadsPerHotkey 255
+
     *Tab::
-    if GetKeyState("LCtrl"){ ;in the case of holding down LCtrl+q then Escape(without releasing Lalt), the LCtrl key keeps being pressed down logically
+        if GetKeyState("LCtrl"){ ;in the case of holding down LCtrl+q then Escape(without releasing Lalt), the LCtrl key keeps being pressed down logically
             Send {LCtrl up}
         }
         Send {blind}{Alt down}{tab}
@@ -339,7 +340,7 @@ $*LAlt::return
     return
 
 #if ; end of GetKeyState("LAlt","P") context
-#MaxThreadsPerHotkey
+#MaxThreadsPerHotkey 1
 
 >!CapsLock::CapsLock
 
@@ -356,15 +357,15 @@ $*LAlt::return
     keyWait, CapsLock
     isCapsLockReleased := true
 
-        if WinActive("ahk_class MultitaskingViewFrame")
-        {
+    if WinActive("ahk_class MultitaskingViewFrame")
+    {
         Send {Esc}}
         Send {alt up}
         return
     }
-    
+
     Send {blind}{alt up}
-    
+
     if (isAltQRunning)
     {
         if (WinActive("ahk_exe Code.exe"))
@@ -389,7 +390,6 @@ $*LAlt::return
         return
     }
 return
-
 
 SC056::Shift ;the Scan Code for the left '\'
 #k::WinMinimize, A
