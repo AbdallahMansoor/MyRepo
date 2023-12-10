@@ -39,14 +39,6 @@ GroupAdd AdobeApps, ahk_exe Premiere.exe
 GroupAdd AdobeApps, ahk_exe Audition.exe
 GroupAdd AdobeApps, ahk_exe Adobe Premiere Pro.exe
 
-#IfWinActive, ahk_class MultitaskingViewFrame ; Windows 10 alt-tab switcher 'https://www.autohotkey.com/docs/Hotkeys.htm#AltTabRemarks'
-    i::Up
-    k::Down
-    j::Left
-    l::Right
-    backspace::delete
-#IfWinActive ; end of #IfWinActive, ahk_class MultitaskingViewFrame
-
 ; if the group that contains Adobe apps is active
 #ifWinActive ahk_group AdobeApps
 
@@ -168,6 +160,7 @@ $*LAlt::return
                     Send !{%A_ThisHotkey%}
     return
 
+    ; need to be looked into
     b::
     g::
     m::
@@ -225,219 +218,112 @@ $*LAlt::return
                 Send !{%A_ThisHotkey%}
     return
 
-    i::
-        if GetKeyState("CapsLock","P")
-            if GetKeyState("s", "P") || GetKeyState("Shift","P")
-                if GetKeyState("Space", "P") || GetKeyState("Ctrl")
-                    Send ^!+{Up}{Space Up}
-                else
-                    Send +!{Up}
-            else if GetKeyState("Space", "P") || GetKeyState("Ctrl")
-                Send ^!{Up}{Space Up}
-            else if GetKeyState("d","P")
-                Send ^!{Up}
-            else
-                Send !{Up}
-
-        else
+    *i::
             if GetKeyState("d","P")
                 if GetKeyState("s", "P") || GetKeyState("Shift","p")
                     Send, +{Up 4}
                 else
                     Send, {Up 4}
             else if GetKeyState("s", "P") || GetKeyState("Shift","p")
-                if GetKeyState("Space", "P") || GetKeyState("Ctrl")
-                    Send +^{Up}{Space Up}
-                else
                     Send +{Up}
-            else if GetKeyState("Space", "P") || GetKeyState("Ctrl")
-                Send ^{Up}{Space Up}
             else
                 Send {Up}
     return
 
-    k::
-        if GetKeyState("CapsLock","P")
-            if GetKeyState("s", "P") || GetKeyState("Shift")
-                if GetKeyState("Space", "P") || GetKeyState("Ctrl")
-                    Send ^!+{Down}{Space Up}
-                else
-                    Send +!{Down}
-            else if GetKeyState("Space", "P") || GetKeyState("Ctrl")
-                Send ^!{Down}{Space Up}
-            else if GetKeyState("d","P")
-                Send ^!{Down}
-            else
-                Send !{Down}
-
-        else
+    *k::
             if GetKeyState("d","P")
-                if GetKeyState("s", "P") || GetKeyState("Shift")
+                if GetKeyState("s", "P") || GetKeyState("Shift","p")
                     Send, +{Down 4}
                 else
                     Send, {Down 4}
-            else if GetKeyState("s", "P") || GetKeyState("Shift")
-                if GetKeyState("Space", "P") || GetKeyState("Ctrl")
-                    Send +^{Down}{Space Up}
-                else
+            else if GetKeyState("s", "P") || GetKeyState("Shift","p")
                     Send +{Down}
-            else if GetKeyState("Space", "P") || GetKeyState("Ctrl")
-                Send ^{Down}{Space Up}
             else
                 Send {Down}
     return
 
-    j::
-        if GetKeyState("CapsLock","P")
-            if GetKeyState("s", "P") || GetKeyState("Shift")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl")
-                    Send ^!+{Left}
-                else
-                    Send +!{Left}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl")
-                Send ^!{Left}
-            else
-                Send !{Left}
-
-        else
-            if GetKeyState("s", "P") || GetKeyState("Shift")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl")
+    *j::
+            if GetKeyState("s", "P") || GetKeyState("Shift","p")
+                if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
                     Send +^{Left}
                 else
                     Send +{Left}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl")
+            else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
                 Send ^{Left}
             else
                 Send {Left}
     return
 
-    l::
-        if GetKeyState("CapsLock","P")
-            if GetKeyState("s", "P") || GetKeyState("Shift")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl")
-                    Send ^!+{Right}
-                else
-                    Send +!{Right}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl")
-                Send ^!{Right}
-            else
-                Send !{Right}
-
-        else
-            if GetKeyState("s", "P") || GetKeyState("Shift")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl")
+    *l::
+                   if GetKeyState("s", "P") || GetKeyState("Shift","p")
+                if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
                     Send +^{Right}
                 else
                     Send +{Right}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl")
+            else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
                 Send ^{Right}
             else
                 Send {Right}
     return
 
-    h::
-        if GetKeyState("CapsLock","P")
-            if GetKeyState("s", "P") || GetKeyState("Shift")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl")
-                    Send ^!+{Home}
-                else
-                    Send +!{Home}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl")
-                Send ^!{Home}
-            else
-                Send !{Home}
-
-        else
-            if GetKeyState("s", "P") || GetKeyState("Shift")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl")
+    *h::
+            if GetKeyState("s", "P") || GetKeyState("Shift","p")
+                if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
                     Send +^{Home}
                 else
                     Send +{Home}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl")
+            else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
                 Send ^{Home}
             else
                 Send {Home}
     return
 
-    `;::
-        if GetKeyState("CapsLock","P")
-            if GetKeyState("s", "P") || GetKeyState("Shift")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl")
-                    Send ^!+{End}
-                else
-                    Send +!{End}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl")
-                Send ^!{End}
-            else
-                Send !{End}
-
-        else
-            if GetKeyState("s", "P") || GetKeyState("Shift")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl")
+    *`;::
+            if GetKeyState("s", "P") || GetKeyState("Shift","p")
+                if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
                     Send +^{End}
                 else
                     Send +{End}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl")
+            else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
                 Send ^{End}
             else
                 Send {End}
     return
 
-    u::
-        if GetKeyState("CapsLock","P")
-            if GetKeyState("s", "P") || GetKeyState("Shift")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl")
-                    Send ^!+{PgUp}
-                else
-                    Send +!{PgUp}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl")
-                Send ^!{PgUp}
-            else
-                Send !{PgUp}
-
-        else
-            if GetKeyState("s", "P") || GetKeyState("Shift")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl")
+    *u::
+            if GetKeyState("s", "P") || GetKeyState("Shift","p")
+                if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
                     Send +^{PgUp}
                 else
                     Send +{PgUp}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl")
+            else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
                 Send ^{PgUp}
             else
                 Send {PgUp}
     return
 
-    p::
-        if GetKeyState("CapsLock","P")
-            if GetKeyState("s", "P") || GetKeyState("Shift")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl")
-                    Send ^!+{PgDn}
-                else
-                    Send +!{PgDn}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl")
-                Send ^!{PgDn}
-            else
-                Send !{PgDn}
-
-        else
-            if GetKeyState("s", "P") || GetKeyState("Shift")
-                if GetKeyState("d", "P") || GetKeyState("Ctrl")
+    *p::
+            if GetKeyState("s", "P") || GetKeyState("Shift","p")
+                if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
                     Send +^{PgDn}
                 else
                     Send +{PgDn}
-            else if GetKeyState("d", "P") || GetKeyState("Ctrl")
+            else if GetKeyState("d", "P") || GetKeyState("Ctrl","p")
                 Send ^{PgDn}
             else
                 Send {PgDn}
     return
 
-    Tab::
-        Send {Alt down}{tab}
+    *Tab::
+    if GetKeyState("LCtrl"){ ;in the case of holding down LCtrl+q then Escape(without releasing Lalt), the LCtrl key keeps being pressed down logically
+            Send {LCtrl up}
+        }
+        Send {blind}{Alt down}{tab}
         KeyWait LAlt
-        Send {LAlt up}
+        Send {blind}{LAlt up}
     return
 
-    q::
+    *q::
         isAltQRunning:=true
         if GetKeyState("LAlt"){ ;in the case of holding down Lalt+tab then Escape(without releasing Lalt), the Lalt key keeps being pressed down logically
             Send {LAlt up}
@@ -458,27 +344,27 @@ $*LAlt::return
 >!CapsLock::CapsLock
 
 *CapsLock::
-    if not GetKeyState("Alt","P"){ ; if Alt key is already pressed down physically, then no need to send Alt key down
-        Sendinput {alt down}
-        Sendinput {Blind}{sc0E9} ; to deactivate highlighting application Menu bar first letters (for accessebility) in Windows (https://www.youtube.com/watch?v=vRld4bVFrpU&lc=UgzMjkQd4rbmvRDqU9h4AaABAg&ab_channel=TaranVanHemert)
-    }
 
-    if (A_PriorHotkey != A_ThisHotkey){
+    if (A_Priorkey != "CapsLock") || (isCapsLockReleased){
         timeWhenFirstCapsLockPressed := A_TickCount
+        isCapsLockReleased := false
     }
 
-return
+    Sendinput {blind}{alt down}
+    Sendinput {blind}{sc0E9} ; to deactivate highlighting application Menu bar first letters (for accessebility) in Windows (https://www.youtube.com/watch?v=vRld4bVFrpU&lc=UgzMjkQd4rbmvRDqU9h4AaABAg&ab_channel=TaranVanHemert)
 
-*CapsLock Up::
+    keyWait, CapsLock
+    isCapsLockReleased := true
 
-    if (WinActive("ahk_class MultitaskingViewFrame")){
-        sendinput {Esc}
-        sendinput {alt up}
-        Return
+        if WinActive("ahk_class MultitaskingViewFrame")
+        {
+        Send {Esc}}
+        Send {alt up}
+        return
     }
-
-    sendinput {alt up}
-
+    
+    Send {blind}{alt up}
+    
     if (isAltQRunning)
     {
         if (WinActive("ahk_exe Code.exe"))
@@ -488,7 +374,8 @@ return
             isAltQRunning:=false
             Return
         }
-        if (WinActive("ahk_exe webstorm64.exe"))
+        ; check for webstorm and android studio
+        if (WinActive("ahk_exe webstorm64.exe")) || (WinActive("ahk_exe studio64.exe"))
         {
             send {Space}
             Send {LCtrl up}
@@ -496,44 +383,15 @@ return
             Return
         }
     }
+
     If ( A_PriorKey = "CapsLock") && (A_TickCount - timeWhenFirstCapsLockPressed < 300){
-        if GetKeyState("shift")
-            if GetKeyState("Ctrl")
-                Send ^+{Esc}
-            else
-                Send +{Esc}
-        else if GetKeyState("Ctrl")
-            Send ^{Esc}
-        else
-            Send {Esc}
+        send {blind}{Esc}
+        return
     }
+return
 
-Return
-
-; $j::
-;     If (A_PriorHotKey = "j" AND A_TimeSincePriorHotkey < 200) ;  I don't know how it works but it works
-; {
-;         if GetKeyState("Shift")
-;         Send {backspace}+{f13}
-;         else
-; 	    Send {backspace}{f13}
-; } else
-; if  GetKeyState("Shift")
-;     if  GetKeyState("Ctrl")
-;         Send ^+{j}
-;     else
-;       Send +{j}
-; else if GetKeyState("Ctrl")
-;          Send  ^{j}
-; else
-;        Send {j}
-; return
 
 SC056::Shift ;the Scan Code for the left '\'
-; LShift::Shift
-; RShift::Shift
-; RCtrl::Ctrl
-; LCtrl::Ctrl
 #k::WinMinimize, A
 #i::WinMaximize, A
 #CapsLock::WinClose, A
