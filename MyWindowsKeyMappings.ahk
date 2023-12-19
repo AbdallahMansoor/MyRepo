@@ -49,12 +49,15 @@ GroupAdd AdobeApps, ahk_exe Adobe Premiere Pro.exe
         if ErrorLevel
             return
         else {
-            ; adding "GetKeyState("LAlt","p")" especially because I disabled the LAlt key globally.
-            if GetKeyState("LAlt","p")
-                ; sending {shift up} to prevent {blind} from passing the Shift modifier, otherwise it will send Shift every time it sends f19.
-                send {blind}{shift up}!{f19}
-            else
-                send {blind}{shift up}{f19}
+            if GetKeyState("Ctrl")
+            if GetKeyState("Alt","p")
+                Send ^!{f19}
+            else 
+                Send ^{f19}
+        else if GetKeyState("Alt","p")
+                Send !{f19}
+        else
+            Send {f19}
         }
     return
 
@@ -68,7 +71,7 @@ GroupAdd AdobeApps, ahk_exe Adobe Premiere Pro.exe
         if ErrorLevel
             return
         else {
-            if GetKeyState("LAlt","p")
+            if GetKeyState("Alt","p")
                 send {blind}!{f18}
             else
                 send {blind}{f18}
