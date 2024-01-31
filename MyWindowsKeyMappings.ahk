@@ -50,14 +50,14 @@ GroupAdd AdobeApps, ahk_exe Adobe Premiere Pro.exe
             return
         else {
             if GetKeyState("Ctrl")
-            if GetKeyState("Alt","p")
-                Send ^!{f19}
-            else 
-                Send ^{f19}
-        else if GetKeyState("Alt","p")
+                if GetKeyState("Alt","p")
+                    Send ^!{f19}
+                else
+                    Send ^{f19}
+            else if GetKeyState("Alt","p")
                 Send !{f19}
-        else
-            Send {f19}
+            else
+                Send {f19}
         }
     return
 
@@ -118,11 +118,15 @@ $*~Ctrl::
     if ErrorLevel
         return
     else {
-        if GetKeyState("Alt","p")
-            ; sending {ctrl up} to prevent {blind} from passing the ctrl modifier, otherwise it will send ctrl every time it sends f21.
-            send {blind}{ctrl up}!{f21}
+        if GetKeyState("Shift")
+            if GetKeyState("Alt","p")
+                Send +!{f21}
+            else
+                Send +{f21}
+        else if GetKeyState("Alt","p")
+            Send !{f21}
         else
-            send {blind}{ctrl up}{f21}
+            Send {f21}
     }
 return
 
