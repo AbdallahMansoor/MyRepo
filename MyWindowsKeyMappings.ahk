@@ -111,6 +111,21 @@ GroupAdd AdobeApps, ahk_exe Adobe Premiere Pro.exe
     }
 return
 
+; click ctrl twice to send f21
+$*~Ctrl::
+    KeyWait, Ctrl
+    KeyWait, Ctrl, D T0.3
+    if ErrorLevel
+        return
+    else {
+        if GetKeyState("Alt","p")
+            ; sending {ctrl up} to prevent {blind} from passing the ctrl modifier, otherwise it will send ctrl every time it sends f21.
+            send {blind}{ctrl up}!{f21}
+        else
+            send {blind}{ctrl up}{f21}
+    }
+return
+
 $*LAlt::return
 
 #if GetKeyState("LAlt","P")
