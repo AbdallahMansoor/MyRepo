@@ -182,61 +182,55 @@ $*LAlt::return
     return
 
     ; need to be looked into
-    b::
-    g::
-    m::
-    n::
-    o::
-    r::
-    t::
-    w::
-    e::
-    2::
-    3::
-    4::
-    5::
-    6::
-    7::
-    8::
-    0::
-    Delete::
-    Insert::
-    Home::
-    End::
-    PgUp::
-    PgDn::
-    '::
-    |::
-    [::
-    ]::
-    \::
-    /::
-    -::
-    =::
-    F1::
-    F2::
-    F3::
-    F4::
-    F5::
-    F6::
-    F7::
-    F8::
-    F9::
-    F10::
-    F11::
-    F12::
+    *b::
+    *g::
+    *m::
+    *n::
+    *o::
+    *r::
+    *t::
+    *w::
+    *e::
+    *2::
+    *3::
+    *4::
+    *5::
+    *6::
+    *7::
+    *8::
+    *0::
+    *Delete::
+    *Insert::
+    *Home::
+    *End::
+    *PgUp::
+    *PgDn::
+    *'::
+    *|::
+    *[::
+    *]::
+    *\::
+    */::
+    *-::
+    *=::
+    *F1::
+    *F2::
+    *F3::
+    *F4::
+    *F5::
+    *F6::
+    *F7::
+    *F8::
+    *F9::
+    *F10::
+    *F11::
+    *F12::
         if isAltQRunning{
-            Send {%A_ThisHotkey%
+           trimmedHotKey := Trim(A_ThisHotkey, "*")
+        send {blind}{%trimmedHotKey%}
         }else
-            if GetKeyState("Shift")
-                if GetKeyState("Ctrl")
-                    Send !^+{%A_ThisHotkey%}
-                else
-                    Send !+{%A_ThisHotkey%}
-            else if GetKeyState("Ctrl")
-                Send !^{%A_ThisHotkey%}
-            else
-                Send !{%A_ThisHotkey%}
+            trimmedHotKey := Trim(A_ThisHotkey, "*")
+        send {blind}!{%trimmedHotKey%}
     return
 
     *i::
