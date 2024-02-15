@@ -240,27 +240,57 @@ $*LAlt::return
     return
 
     *i::
-        if GetKeyState("d","P")
-            if GetKeyState("s", "P") || GetKeyState("Shift","p")
-                Send, +{Up 4}
+        if GetKeyState("CapsLock","P"){
+            if (GetKeyState("s", "P")) {
+                if GetKeyState("d", "P") {
+                    Send ^!+{Up}
+                } else {
+                    Send +!{Up}
+                }
+            } else if GetKeyState("d", "P"){
+                Send ^!{Up}
+            }
             else
+                Send !{Up}
+
+        } else if (GetKeyState("d","P")) {
+            if (GetKeyState("s", "P")) {
+                Send, +{Up 4}
+            } else {
                 Send, {Up 4}
-        else if GetKeyState("s", "P") || GetKeyState("Shift","p")
+            }
+        } else if (GetKeyState("s", "P")) {
             Send +{Up}
-        else
-            Send {Up}
+        } else {
+            Send {Blind}{Up}
+        }
     return
 
     *k::
-        if GetKeyState("d","P")
-            if GetKeyState("s", "P") || GetKeyState("Shift","p")
-                Send, +{Down 4}
+        if GetKeyState("CapsLock","P"){
+            if (GetKeyState("s", "P")) {
+                if GetKeyState("d", "P") {
+                    Send ^!+{Down}
+                } else {
+                    Send +!{Down}
+                }
+            } else if GetKeyState("d", "P"){
+                Send ^!{Down}
+            }
             else
+                Send !{Down}
+
+        } else if (GetKeyState("d","P")) {
+            if (GetKeyState("s", "P")) {
+                Send, +{Down 4}
+            } else {
                 Send, {Down 4}
-        else if GetKeyState("s", "P") || GetKeyState("Shift","p")
+            }
+        } else if (GetKeyState("s", "P")) {
             Send +{Down}
-        else
-            Send {Down}
+        } else {
+            Send {Blind}{Down}
+        }
     return
 
     *j::
