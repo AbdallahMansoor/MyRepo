@@ -1,0 +1,5 @@
+.*?word1.*?word2.*?word3
+
+-the DOT(.) matches any character except newline/linebreak. so this expression would match words on the same line.
+-relevant regex: [\w\W], \w, \b
+--------------------------------------------------------------------------------------------------------
