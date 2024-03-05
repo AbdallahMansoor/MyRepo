@@ -52,14 +52,23 @@ class Figure(FigureBase):
             self.motion_cid = self.last_axes.figure.canvas.mpl_connect('motion_notify_event', self.on_motion)
         elif event.button == 2:
             if event.inaxes:
-                self.last_axes.relim()
-                self.last_axes.autoscale()
-                self.last_axes.figure.canvas.draw_idle()
+                data_limits = self.last_axes.dataLim
+                x_margin = (data_limits.max[0] - data_limits.min[0]) * 0.05
+                y_margin = (data_limits.max[1] - data_limits.min[1]) * 0.05
+                self.last_axes.set_xlim(data_limits.min[0] - x_margin, data_limits.max[0] + x_margin)
+                self.last_axes.set_ylim(data_limits.min[1] - y_margin, data_limits.max[1] + y_margin)
+                if 'ipympl' not in mpl.get_backend():
+                    self.last_axes.figure.canvas.draw_idle()
             else:
                 for ax in self.last_axes.figure.axes:
-                    ax.relim()
-                    ax.autoscale()
-                    ax.figure.canvas.draw_idle()
+                    # do the same for all axes
+                    data_limits = ax.dataLim
+                    x_margin = (data_limits.max[0] - data_limits.min[0]) * 0.05
+                    y_margin = (data_limits.max[1] - data_limits.min[1]) * 0.05
+                    ax.set_xlim(data_limits.min[0] - x_margin, data_limits.max[0] + x_margin)
+                    ax.set_ylim(data_limits.min[1] - y_margin, data_limits.max[1] + y_margin)
+                    if 'ipympl' not in mpl.get_backend():
+                        ax.figure.canvas.draw_idle() 
                     
     def on_release(self, event):
         if self.motion_cid:
@@ -118,14 +127,23 @@ class Figure(FigureBase):
     def on_key_press(self, event):
         if event.key == 'd':
             if event.inaxes:
-                self.last_axes.relim()
-                self.last_axes.autoscale()
-                self.last_axes.figure.canvas.draw_idle()
+                data_limits = self.last_axes.dataLim
+                x_margin = (data_limits.max[0] - data_limits.min[0]) * 0.05
+                y_margin = (data_limits.max[1] - data_limits.min[1]) * 0.05
+                self.last_axes.set_xlim(data_limits.min[0] - x_margin, data_limits.max[0] + x_margin)
+                self.last_axes.set_ylim(data_limits.min[1] - y_margin, data_limits.max[1] + y_margin)
+                if 'ipympl' not in mpl.get_backend():
+                    self.last_axes.figure.canvas.draw_idle()
             else:
                 for ax in self.last_axes.figure.axes:
-                    ax.relim()
-                    ax.autoscale()
-                    ax.figure.canvas.draw_idle()
+                    # do the same for all axes
+                    data_limits = ax.dataLim
+                    x_margin = (data_limits.max[0] - data_limits.min[0]) * 0.05
+                    y_margin = (data_limits.max[1] - data_limits.min[1]) * 0.05
+                    ax.set_xlim(data_limits.min[0] - x_margin, data_limits.max[0] + x_margin)
+                    ax.set_ylim(data_limits.min[1] - y_margin, data_limits.max[1] + y_margin)
+                    if 'ipympl' not in mpl.get_backend():
+                        ax.figure.canvas.draw_idle() 
                     
      # Other methods inside the Figure class ....
 
