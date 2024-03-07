@@ -1,0 +1,28 @@
+
+
+************************** Quirks **************************
+- A class instance (object) with no reference (assigned to a variable) to it, is garbage collected: 
+import matplotlib.pyplot as plt
+
+class adjust_plot:
+    def __init__(self, figure):
+        self.figure = figure
+        self.figure.canvas.mpl_connect('key_press_event', self.on_key_press)
+    
+    def on_key_press(self, event):
+        print('you pressed', event.key)
+        
+    def __del__(self):
+        print('Object has been destroyed')
+        
+
+fig, ax = plt.subplots()
+ax.plot([1, 2, 3, 4])
+
+adjust_plot(fig) # it would be fixed by assigning the object reference to a variable (i.e. adjuster = adjust_plot(fig))
+plt.show()
+---------------------
+
+-Default arguments are static: if you define a function with a (mutable) default argument (like a list or a dictionary), Python only creates one instance of that argument and reuses it every time the function is called (without that argument explicitly set).
+
+-
