@@ -1,0 +1,25 @@
+# vertical annotation matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate some data
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+# Create a figure and axis
+fig, ax = plt.subplots()
+
+line, = ax.plot(x, y)
+
+#it must be very accurate for "np.where" to find it, else you can use: np.argmin(np.abs(xdata - x_value))
+x_value = 5.252525252525253
+xdata, ydata = line.get_data()
+index = np.where(xdata == x_value)[0]
+y_value = ydata[index]
+y_min, y_max = ax.dataLim.intervaly
+line_height = 0.1 * (y_max - y_min)
+# later, I can pass the line style and color to the function that draws the annotation
+ax.plot([x_value, x_value], [y_value - line_height/2, y_value + line_height/2], '--', linewidth=2, color='r')
+
+plt.show()
+------------------------------------------------------------------------
