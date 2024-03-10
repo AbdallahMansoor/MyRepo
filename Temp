@@ -1,3 +1,4 @@
+# TODO: (pass optinal y to the annotatiion function), enable grid
 # vertical annotation matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
