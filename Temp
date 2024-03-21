@@ -24,3 +24,15 @@ ax.plot([x_value, x_value], [y_value - line_height/2, y_value + line_height/2], 
 
 plt.show()
 ------------------------------------------------------------------------
+# to ask Claude:
+(I'm someone who intends to spot patterns algorithmically on some stocks, i have small finance, and I'm trying to understand the big picture or the scene of algorithmic trading, so help me write a reddit post to ask people. try to fill the gaps in my post. title: "[Novice] Seeking advice on how to approach simple.... with a tiny budget". body: "Hi everyone, 
+
+I'm getting started and I'm trying to map out ...
+
+As a study case, I have an assumption that certain stocks move in an upward cyclical motion in a bull market and the right point of entry is when the price flattens after a downturn.
+
+So, I'm looking for the prevailing, cost-effective ways to ... strategy.
+
+in an ideal world, I would have a real-time stream of 1-minute candles and a broker(stocks and forex) to execute my orders  ... all under 20$ a month.
+
+I would be thankful if you could point out references or resources that can help me ... the space of algorithmic trading.")
