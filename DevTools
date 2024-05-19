@@ -11,3 +11,5 @@ selector's priority/specificity, so if a property is line-crossed, it means that
 
 - https://developer.chrome.com/docs/devtools/console/utilities
 
+- Emulate a focused/hovered page when using Devtools (https://developer.chrome.com/docs/devtools/rendering/apply-effects#emulate_a_focused_page)
+
