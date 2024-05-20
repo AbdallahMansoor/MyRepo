@@ -11,3 +11,4 @@
 
 - Chrome flag: "Insecure origins treated as secure", to treat certain origins as secure ones even though they are not (e.g. http://localhost). (https://web.dev/how-to-use-local-https/)
 
+- enable Diigo extension's "Show annotations automatically" in the extension's options/settings to show previously highlighted text on page visit
