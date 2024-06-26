@@ -17,3 +17,4 @@
 - Connect to a remote repository for pushing or fetching/pulling : "git remote add origin {URL}"
 
 - Search for a string across all branches: git grep "string/regexp" $(git rev-list --all)
+- you can also search from the VScode extension "Git Graph" UI
