@@ -2,6 +2,8 @@
 
 - the 'which' command: use it in the terminal to know the source of a binary or exe (e.g which ssh, which flutter)
 
+- use the "history" command in Linux to list the previously executed commands.
+
 - Keep it local, cache, frontend data organization, storing, retrieval,hint: store image/file url(any type of url) in the database, for faster loading 
 
 - using http headers as extra layer for reinforcing authenticity
