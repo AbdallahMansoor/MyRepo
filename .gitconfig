@@ -5,9 +5,6 @@
 	pager = cat
 [init]
 	defaultBranch = main
-[credential]
-	helper = cache 
-	
 [push]
 	followTags = true
 
@@ -16,3 +13,5 @@
 	ci = commit
 	st = status
 	br = branch
+[credential]
+	helper = store
