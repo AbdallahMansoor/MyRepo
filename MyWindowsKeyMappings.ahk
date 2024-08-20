@@ -57,6 +57,7 @@ GroupAdd AdobeApps, ahk_exe Adobe Premiere Pro.exe
             else if GetKeyState("Alt","p")
                 Send !{f19}
             else
+                Sleep, 100
                 Send {f19}
         }
     return
