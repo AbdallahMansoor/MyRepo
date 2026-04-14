@@ -1,5 +1,6 @@
 - ... To accomplish this task, we are going to follow a 3 phases iterative/progressive approach. For this first phase, outline how we are going to do it, the expected outcome, and if there are any additional work/infrastructure needed for the job. in the second phase, we are going to build the skeleton/core functionality needed for the solution to barely work. in the third phase, we are going to complete the task and add all the additional parts for the task to be fully-fledged.
 - ... We are going to follow iterative/progressive phases to achieve this. For this first phase, just outline the affected parts/core changes needed for the component to be functional as stated. later, we are going to add any complementary changes or optimizations if needed.
+- ... Based on that context, let us rough out/set up the skeleton/first iteration to just wire things up and make sure the plumbing is working end-to-end.
 - just outline the core changes that solve this issue
 - When debugging: Please think step by step and trace the code to know what is going on
 - If you are ever unsure about what or how to do something, ask me any relevant questions as needed.
@@ -8,4 +9,16 @@
 - ... For any edits, don't write the code all over again. Just highlight the changes/additions we are going to make, with a little context before and after the change so that I know where to make the changes.
 - The attached file contains the entire codebase for a ... . Please review the codebase and generate a walkthrough of the entire repo, the high-level architecture, the core parts and ideas, so that I can fit into my head the big picture of how it works end-to-end and the flow.
 - Let us document what we have done so far in a structured way to be able to add it to our next conversation context (by extending the initial prompt) so that you would be able to get the full context of what we have done and the state we are in right now. 
-- Let us incorporate our conclusions and what we came to, into the main/initial context, so that I can carry it forward as an independent, stateless context for future conversations
+- Let us incorporate our conclusions and what we came to, into the main/initial context, so that I can carry it forward as an independent, stateless, seamlessly-flowing context for future conversations. Please keep it solid, concise, and crisp. (We don't aim for a "nice"/"tight" write-up; we are just stating/laying out our ideas, and that we might critique/improve later)
+- ... We are intending to use that context as a living document
+- Right now, we are just mapping out every aspect of our strategy before we get to implementation and specifics (building the theoretical skeleton)
+- 
+
+
+
+
+
+
+-------------------------- Words --------------------------
+- stroke out
+- rough out
