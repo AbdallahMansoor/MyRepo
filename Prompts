@@ -8,12 +8,10 @@
 - Let us incorporate the functionality again into our initial/main code without any debugging/auditing related edits
 - ... For any edits, don't write the code all over again. Just highlight the changes/additions we are going to make, with a little context before and after the change so that I know where to make the changes.
 - The attached file contains the entire codebase for a ... . Please review the codebase and generate a walkthrough of the entire repo, the high-level architecture, the core parts and ideas, so that I can fit into my head the big picture of how it works end-to-end and the flow.
-- Let us document what we have done so far in a structured way to be able to add it to our next conversation context (by extending the initial prompt) so that you would be able to get the full context of what we have done and the state we are in right now. 
 - Let us incorporate our conclusions and what we came to, into the main/initial context, so that I can carry it forward as an independent, stateless, seamlessly-flowing context for future conversations. Please keep it solid, concise, and crisp. (We don't aim for a "nice"/"tight" write-up; we are just stating/laying out our ideas, and that we might critique/improve later)
+- Let us incorporate our conclusions and what we came to, into the context tree. Draft the updates that you think we should do or promote into the context, at which level/node, and flag any conflicts with the existing context.
 - ... We are intending to use that context as a living document
 - Right now, we are just mapping out every aspect of our strategy before we get to implementation and specifics (building the theoretical skeleton)
-- 
-
 
 
 
