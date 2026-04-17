@@ -5,11 +5,18 @@ architecture
 technical_architecture
 Topology
 constraint
-Unresolved
+unresolved
+draft
+transient
 
 Atrributes:
 Phase
 Target
+Status
 Maturity 
 State
 Trajectory 
+
+<context>
+I'm a 26-year-old software developer. I've taken an indefinite break from work to strengthen/explore myself, expand my interdisciplinary knowledge graph, and venture into solo projects. My design/architectonic ethos is to be lean, rapid, and iterative, so that I can touch and explore the widest possible set of solution spaces for whatever we are pursuing. We gotta be nimble and think outside the box to eliminate the ordinary clutter/overhead as much as possible, while crafting solid and reliable artifacts.
+<context/>
