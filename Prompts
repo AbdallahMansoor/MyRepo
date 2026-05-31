@@ -1,22 +1,31 @@
+- Right now, we are just mapping out every aspect of our strategy before we get to implementation and specifics (building the theoretical skeleton)
+- Let us sketch the conceptual diagram/view for ..., so we can annotate/indicate the keypoints we reached here. Without being overly dictative/opinionated, to always give room to the new/powerful LLMs to innovate and direct/surface me to things I don't know about.
+- ... Based on that context, let us rough out/set up the skeleton/first iteration to just wire things up and make sure the plumbing is working end-to-end.
+- Let us go ahead and set up the skeletal frames to realize the new changes/edits. Plotting the waypoints/joints. Stroking out the functions/classes' signatures, wirings, TODOs, creating files if needed, etc. Later, we will drill down on each piece and completely concretize it.
+
+- Let us incorporate our conclusions and what we came to, into the main/initial context, so that I can carry it forward as an independent, stateless, seamlessly-flowing context for future conversations. Please keep it solid, concise, and crisp. (We don't aim for a "nice"/"tight" write-up; we are just stating/laying out our ideas, and that we might critique/improve later)
+- Let us incorporate our conclusions and what we came to, into the context tree. Draft the updates that you think we should do or promote into the context, at which level/node, and flag any conflicts with the existing context.
+
 - ... To accomplish this task, we are going to follow a 3 phases iterative/progressive approach. For this first phase, outline how we are going to do it, the expected outcome, and if there are any additional work/infrastructure needed for the job. in the second phase, we are going to build the skeleton/core functionality needed for the solution to barely work. in the third phase, we are going to complete the task and add all the additional parts for the task to be fully-fledged.
 - ... We are going to follow iterative/progressive phases to achieve this. For this first phase, just outline the affected parts/core changes needed for the component to be functional as stated. later, we are going to add any complementary changes or optimizations if needed.
-- ... Based on that context, let us rough out/set up the skeleton/first iteration to just wire things up and make sure the plumbing is working end-to-end.
 - just outline the core changes that solve this issue
 - When debugging: Please think step by step and trace the code to know what is going on
-- If you are ever unsure about what or how to do something, ask me any relevant questions as needed.
 - Let us strip our code (and mock the surroundings if needed) to focus down on the newly added functionality to audit it and make sure that is working as expected.
 - Let us incorporate the functionality again into our initial/main code without any debugging/auditing related edits
 - ... For any edits, don't write the code all over again. Just highlight the changes/additions we are going to make, with a little context before and after the change so that I know where to make the changes.
 - The attached file contains the entire codebase for a ... . Please review the codebase and generate a walkthrough of the entire repo, the high-level architecture, the core parts and ideas, so that I can fit into my head the big picture of how it works end-to-end and the flow.
-- Let us incorporate our conclusions and what we came to, into the main/initial context, so that I can carry it forward as an independent, stateless, seamlessly-flowing context for future conversations. Please keep it solid, concise, and crisp. (We don't aim for a "nice"/"tight" write-up; we are just stating/laying out our ideas, and that we might critique/improve later)
-- Let us incorporate our conclusions and what we came to, into the context tree. Draft the updates that you think we should do or promote into the context, at which level/node, and flag any conflicts with the existing context.
+- If you are ever unsure about what or how to do something, ask me any relevant questions as needed.
+
 - ... We are intending to use that context as a living document
-- Right now, we are just mapping out every aspect of our strategy before we get to implementation and specifics (building the theoretical skeleton)
-
-
-
-
+- Go through the project code carefully to familiarize yourself with it. Understand the flow and map it out for yourself.
+- You will be acting as the operator/orchestrator for a Claude instance. I will provide you with the response and code changes (if any) from Claude. You will analyze/audit it, trace the logic/code flow/sequence, and think out the next prompt relative to the current context. Don't dictate to Claude the exact technical specifics, to give it room for exploration and innovation (unless you think it's an important thing and it might miss or missed it)
+- git add -N -A ; git diff HEAD > claude_changes.txt
+- In the future, we might do other projects related to CCXT, CEXs APIs, or other general crypto projects. So, let us set up a file about our findings, APIs specs/facts, and unexpected things to raise awareness for futureself so we don't go through the same mistakes/oversights again in the future. These are not notes to be tightly related to the project we have been doing, but findings/facts, designed to be carried over across future projects. That file will be treated as a live document to incorporate our findings and unexpected things as we encounter them, without being opinionated/dictative about our writings to leave room for the future self who is more intelligent and can do more/better explorations/inspections. 
 
 -------------------------- Words --------------------------
 - stroke out
 - rough out
+- things we can DRAW from ChatGPT response?
+-----------------
+- foundation, background
+- skeleton, architcure
