@@ -1,4 +1,4 @@
-<!-- This is the context hierarchy. This document is meant to be laid out in a hierarchical/layered way where the upper/outermost nodes have more weight/more ingrained than the lower/innermost nodes (Weight Gradient). Moving inward acts as a semantic zoom; each child node reveals the granular, high-resolution expansion of its parent. [For 'Auto-update' mode only: It's intended to be used as a live document. Inner nodes are highly fluid, and as we operate more inward, you must be more reluctant to modify the upper/outer nodes. When updating the context tree, do not use temporal or conversational language (e.g., 'we decided', 'today', 'the user wants', 'next'). Write strictly in declarative, representational facts]. Every context snapshot is a self-contained, stateless representation of the project, with no references to prior sessions or ongoing session-related states. If something is pending, incomplete, or unknown, do not use temporal language (e.g., 'we are deciding ...', 'Next, we will ....'); instead, use representative nodes/attributes to explicitly map things. We must maintain the tree's leanness. If something is implied by one of the overarching nodes/attributes, it shouldn't be defined downstream, or maybe even be included in the tree. -->
+<!-- This is the context hierarchy. This document is meant to be laid out in a hierarchical/layered way where the upper/outermost nodes have more weight/more ingrained than the lower/innermost nodes (Weight Gradient). Moving inward acts as a semantic zoom; each child node reveals a more granular, high-resolution expansion of its parent. [For 'Auto-update' mode only: It's intended to be used as a live document. Inner nodes are highly fluid, and as we operate more inward, you must be more reluctant to modify the upper/outer nodes. When updating the context tree, do not use temporal or conversational language (e.g., 'we decided', 'today', 'the user wants', 'next'). Write in declarative, representational facts]. Every context snapshot is a self-contained, stateless representation of the project, with no references to prior sessions or ongoing session-related states. If something is pending, incomplete, or unknown, do not use temporal/relative language (e.g., 'Changed ... to ...', 'Next, we will ....'); instead, use representative nodes/attributes to explicitly map things. We must maintain the tree's leanness. If something is implied by one of the overarching nodes/attributes, it shouldn't be redundant downstream, or maybe even be included in the tree. -->
 
 Tags:
 architecture
@@ -11,14 +11,15 @@ unresolved
 draft
 transient
 
-Atrributes:
+Attributes:
 Phase
 Target
+'aware-of'/'informed-by'/'governed-by'/'bound-by'/'subject-to'/'derives_from'
 Status - 'iterative expansion', 'setting up'
-Maturity 
+Maturity
 State
-Trajectory 
+Trajectory
 
 <context>
-I'm a 26-year-old software developer. I've taken an indefinite break from work to strengthen/explore myself, expand my interdisciplinary knowledge graph, and venture into solo projects. My design/architectonic ethos is to be lean, rapid, and iterative, so that I can touch and explore the widest possible set of solution spaces for whatever we are pursuing. We gotta be nimble and think outside the box to eliminate the ordinary clutter/overhead as much as possible, while crafting solid and reliable artifacts. We achieve this nimbleness by leveraging high-impact architectural/systemic decisions/actions before hitting diminishing returns, not by taking superficial trade-offs that degrade the clarity or solidity of our solutions
+I'm a 26-year-old software developer. I've taken an indefinite break from work to strengthen/explore myself, expand my interdisciplinary knowledge graph, and venture into solo projects. My design/architectonic ethos is to be lean, rapid, and iterative, so that I can touch and explore the widest possible set of solution spaces for whatever we are pursuing. We gotta be nimble and think outside the box to eliminate the ordinary clutter/overhead as much as possible, while crafting solid and reliable artifacts. We achieve this nimbleness by leveraging high-impact/yield architectural/systemic decisions/actions before hitting diminishing returns, not by taking superficial trade-offs that degrade the clarity or solidity of our solutions
 <context/>
