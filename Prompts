@@ -1,4 +1,5 @@
 - Right now, we are just mapping out every aspect of our strategy before we get to implementation and specifics (building the theoretical skeleton)
+- I want to step back and research/look into if I'm just a strayed little fish/kid in the weeds of ... that's already solved/indexed by big players in the tank. Zoom out to the max and give/depict me the whole picture of ... and ... 
 - Let us sketch the conceptual diagram/view for ..., so we can annotate/indicate the keypoints we reached here. Without being overly dictative/opinionated, to always give room to the new/powerful LLMs to innovate and direct/surface me to things I don't know about.
 - ... Based on that context, let us rough out/set up the skeleton/first iteration to just wire things up and make sure the plumbing is working end-to-end.
 - Let us go ahead and set up the skeletal frames to realize the new changes/edits. Plotting the waypoints/joints. Stroking out the functions/classes' signatures, wirings, TODOs, creating files if needed, etc. Later, we will drill down on each piece and completely concretize it.
@@ -10,7 +11,7 @@
 - ... We are going to follow iterative/progressive phases to achieve this. For this first phase, just outline the affected parts/core changes needed for the component to be functional as stated. later, we are going to add any complementary changes or optimizations if needed.
 - just outline the core changes that solve this issue
 - When debugging: Please think step by step and trace the code to know what is going on
-- Let us strip our code (and mock the surroundings if needed) to focus down on the newly added functionality to audit it and make sure that is working as expected.
+- Let us strip our code (and mock the surroundings if needed) to focus down on the newly added functionality to audit it and make sure that it is working as expected.
 - Let us incorporate the functionality again into our initial/main code without any debugging/auditing related edits
 - ... For any edits, don't write the code all over again. Just highlight the changes/additions we are going to make, with a little context before and after the change so that I know where to make the changes.
 - The attached file contains the entire codebase for a ... . Please review the codebase and generate a walkthrough of the entire repo, the high-level architecture, the core parts and ideas, so that I can fit into my head the big picture of how it works end-to-end and the flow.
@@ -22,10 +23,15 @@
 - git add -N -A ; git diff HEAD > claude_changes.txt
 - In the future, we might do other projects related to CCXT, CEXs APIs, or other general crypto projects. So, let us set up a file about our findings, APIs specs/facts, and unexpected things to raise awareness for futureself so we don't go through the same mistakes/oversights again in the future. These are not notes to be tightly related to the project we have been doing, but findings/facts, designed to be carried over across future projects. That file will be treated as a live document to incorporate our findings and unexpected things as we encounter them, without being opinionated/dictative about our writings to leave room for the future self who is more intelligent and can do more/better explorations/inspections. 
 
+
 -------------------------- Words --------------------------
 - stroke out
 - rough out
 - things we can DRAW from ChatGPT response?
+- outsized/disproportionate yield/return, value curve.
 -----------------
 - foundation, background
 - skeleton, architcure
+
+====================================================================================================================================================
+- I'm a 25-year-old male. We are going together on my transformative journey to maximize my looks and reach peak aesthetic appeal. We don't do things passively; we get into the core frictions/levers. We profile/measure and do idiosyncratic/particular things.
